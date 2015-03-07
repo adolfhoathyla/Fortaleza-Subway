@@ -17,9 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let navigationController = self.window!.rootViewController as UINavigationController
-        let controller = navigationController.topViewController as MasterViewController
-        controller.managedObjectContext = self.managedObjectContext
+        let tabBarController = self.window!.rootViewController as UITabBarController
+        
+        tabBarController.selectedIndex = 1;
+        
+        let controller = tabBarController.viewControllers?.first as UINavigationController
+        
+        let master = controller.topViewController as MasterViewController
+        master.managedObjectContext = self.managedObjectContext
+        
+        if !NSUserDefaults.standardUserDefaults().boolForKey("firstAcess") {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstAcess")
+            self.addAllLines()
+            self.addAllEstacoes()
+            //self.addRegionsMonitoring()
+        }
+        
         return true
     }
 
@@ -109,6 +122,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func addAllLines() {
+        var manager = ManagerData()
+        manager.addLinhaWithName("Sul")
+        manager.addLinhaWithName("Leste")
+        manager.addLinhaWithName("Oeste")
+    }
+    
+    func addAllEstacoes() {
+        var manager = ManagerData()
+        manager.addEstacaoWithName("Estação do Athyla", latitude: -3.879383, longitude: -38.609168, linha: "Sul")
+        manager.addEstacaoWithName("Carlito Benevides", latitude: -3.894090, longitude: -38.621003, linha: "Sul")
+        manager.addEstacaoWithName("Jereissati", latitude: -3.887254, longitude: -38.627102, linha: "Sul")
+        manager.addEstacaoWithName("Maracanaú", latitude: -3.878559, longitude: -38.625588, linha: "Sul")
+        manager.addEstacaoWithName("Virgílio Távora", latitude: -3.867129, longitude: -38.620134, linha: "Sul")
+        manager.addEstacaoWithName("Rachel de Queiroz", latitude: -3.850466, longitude: -38.608327, linha: "Sul")
+        manager.addEstacaoWithName("Alto Alegre", latitude: -3.839299, longitude: -38.600502, linha: "Sul")
+        manager.addEstacaoWithName("Aracapé", latitude: -3.825964, longitude: -38.591499, linha: "Sul")
+        manager.addEstacaoWithName("Esperança", latitude: -3.816800, longitude: -38.585473, linha: "Sul")
+        manager.addEstacaoWithName("Mondubim", latitude: -3.807392, longitude: -38.577355, linha: "Sul")
+        manager.addEstacaoWithName("Manoel Sátiro", latitude: -3.798295, longitude: -38.574918, linha: "Sul")
+        manager.addEstacaoWithName("Vila Pery", latitude: -3.783916, longitude: -38.571985, linha: "Sul")
+        manager.addEstacaoWithName("Parangaba", latitude: -3.779772, longitude: -38.570811, linha: "Sul")
+        manager.addEstacaoWithName("Couto Fernandes", latitude: -3.756626, longitude: -38.557616, linha: "Sul")
+        manager.addEstacaoWithName("Porangabussu", latitude: -3.754729, longitude: -38.554633, linha: "Sul")
+        manager.addEstacaoWithName("Benfica", latitude: -3.739647, longitude: -38.538245, linha: "Sul")
+    }
+    
+//    func addRegionsMonitoring() {
+//        var manager = ManagerData()
+//        var estacoes = manager.getAllEstacoes()
+//        var initialViewController = InitialViewController()
+//        for estacao in estacoes {
+//            println(estacao.nome)
+//            println(estacao.latitude)
+//            println(estacao.longitude)
+//            initialViewController.makeRegionMonitoring(latitude: estacao.latitude as Double, longitude: estacao.longitude as Double, identifier: estacao.nome)
+//        }
+//    }
 
 }
 

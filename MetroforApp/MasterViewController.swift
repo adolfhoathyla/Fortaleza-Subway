@@ -21,17 +21,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+        //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        self.tableView.tableFooterView = UIView()
+        navigationController?.navigationBar.topItem?.title = "Linha"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+/*
     func insertNewObject(sender: AnyObject) {
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
@@ -50,14 +50,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             abort()
         }
     }
-
+*/
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "showEstacao" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-            (segue.destinationViewController as DetailViewController).detailItem = object
+                let line = self.fetchedResultsController.objectAtIndexPath(indexPath) as Linha
+                (segue.destinationViewController.topViewController as ChooseEstacaoTableViewController).linha = line.nome
+                (segue.destinationViewController.topViewController as ChooseEstacaoTableViewController).managedObjectContext = self.managedObjectContext
+                (segue.destinationViewController.topViewController as ChooseEstacaoTableViewController).navigationController?.navigationBar.topItem?.title = line.nome
             }
         }
     }
@@ -78,30 +80,18 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.configureCell(cell, atIndexPath: indexPath)
         return cell
     }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            let context = self.fetchedResultsController.managedObjectContext
-            context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
-                
-            var error: NSError? = nil
-            if !context.save(&error) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                //println("Unresolved error \(error), \(error.userInfo)")
-                abort()
-            }
-        }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showEstacao", sender: nil)
     }
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel!.text = object.valueForKey("timeStamp")!.description
+        cell.textLabel!.text = object.valueForKey("nome")!.description
+        if cell.textLabel!.text != "Sul" {
+            cell.selectionStyle = UITableViewCellSelectionStyle.Gray
+            cell.userInteractionEnabled = false
+        }
     }
 
     // MARK: - Fetched results controller
@@ -113,14 +103,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         let fetchRequest = NSFetchRequest()
         // Edit the entity name as appropriate.
-        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: self.managedObjectContext!)
+        let entity = NSEntityDescription.entityForName("Linha", inManagedObjectContext: self.managedObjectContext!)
         fetchRequest.entity = entity
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "nome", ascending: false)
         let sortDescriptors = [sortDescriptor]
         
         fetchRequest.sortDescriptors = [sortDescriptor]
