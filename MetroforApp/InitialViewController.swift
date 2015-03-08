@@ -23,7 +23,9 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         self.initMyLocationManager()
-        //self.addRegionsMonitoring()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "actionEstouNaEstacao", name: "actionSimPressed", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "actionNaoEstouNaEstacao", name: "actionNaoPressed", object: nil)
         
 
         // Do any additional setup after loading the view.
@@ -52,6 +54,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager?.stopUpdatingLocation()
         if ((error) != nil) {
             println(error)
+            self.myLocation.text = "Não me deixou ver sua localização :/"
         }
     }
     
@@ -103,6 +106,17 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
             let regionCircular = region as CLCircularRegion
             let userLocation = self.locationManager?.location.coordinate
             if regionCircular.containsCoordinate(userLocation!) {
+//                let date = NSDate()
+//                let calendar = NSCalendar.currentCalendar()
+//                let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+                
+                var notification:UILocalNotification = UILocalNotification()
+                notification.category = "MY_CATEGORY"
+                notification.alertBody = "Você está na estação \(region.identifier)?"
+                //notification.fireDate = NSDate()
+                
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                
                 self.myLocation.text = "Está na estação " + region.identifier
             }
         //}
@@ -110,13 +124,21 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
 
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        //criar uma notificação
+        var notification:UILocalNotification = UILocalNotification()
+        notification.category = "MY_CATEGORY"
+        notification.alertBody = "Você está na estação \(region.identifier)?"
+        //notification.fireDate = NSDate()
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    
         println("Enter region ", region.identifier)
         self.myLocation.text = "Está na estação " + region.identifier
     }
     
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
         println("Exit region ", region.identifier)
-        self.myLocation.text = "Saiu na estação " + region.identifier
+        self.myLocation.text = "Saiu da estação " + region.identifier
     }
 
     override func didReceiveMemoryWarning() {

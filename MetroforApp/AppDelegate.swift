@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let master = controller.topViewController as MasterViewController
         master.managedObjectContext = self.managedObjectContext
         
+        //Se for o primeiro acesso, vamos popular o banco (:
         if !NSUserDefaults.standardUserDefaults().boolForKey("firstAcess") {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstAcess")
             
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //self.addRegionsMonitoring()
         }
         
+        //Se não tiver uma sessão aberta, então vamos abrir uma sessão no facebook (:
         if !FBSession.activeSession().isOpen {
         //if FBSession.activeSession().state == FBSessionState.CreatedTokenLoaded {
             println("não está logado")
@@ -44,7 +46,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController?.presentViewController(loginViewController, animated: true, completion: nil)
         }
         
+        //Notificações (:
+        
+        //actions
+        var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        firstAction.identifier = "FIRST_ACTION"
+        firstAction.title = "Sim"
+        
+        firstAction.activationMode = UIUserNotificationActivationMode.Background
+        firstAction.destructive = true
+        firstAction.authenticationRequired = false
+        
+        var secondAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        secondAction.identifier = "SECOND_ACTION"
+        secondAction.title = "Não"
+        
+        secondAction.activationMode = UIUserNotificationActivationMode.Foreground
+        secondAction.destructive = false
+        secondAction.authenticationRequired = false
+        
+        
+        //categorie
+        let category:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        category.identifier = "MY_CATEGORY"
+        
+        category.setActions([firstAction, secondAction], forContext: UIUserNotificationActionContext.Default)
+        category.setActions([firstAction, secondAction], forContext: UIUserNotificationActionContext.Minimal)
+        
+        let categories:NSSet = NSSet(objects: category)
+        
+        let type:UIUserNotificationType = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound
+        let mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: type, categories: categories)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
+        
         return true
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        if identifier == "FIRST_ACTION" {
+            NSNotificationCenter.defaultCenter().postNotificationName("actionSimPressed", object: nil)
+        } else if identifier == "SECOND_ACTION" {
+            NSNotificationCenter.defaultCenter().postNotificationName("actionNaoPressed", object: nil)
+        }
+        completionHandler()
     }
     
     func applicationWillResignActive(application: UIApplication) {
