@@ -19,7 +19,8 @@
                     <connections>
                         <segue destination="rS3-R9-Ivy" kind="relationship" relationship="viewControllers" id="ymR-xT-aqO"/>
                         <segue destination="kWO-oH-VfR" kind="relationship" relationship="viewControllers" id="qbT-Ur-dja"/>
-                        <segue destination="wtx-OJ-GEA" kind="relationship" relationship="viewControllers" id="txH-zy-ywL"/>
+                        <segue destination="J8k-zc-Q1Q" kind="relationship" relationship="viewControllers" id="UGT-nC-YEf"/>
+                        <segue destination="wtx-OJ-GEA" kind="relationship" relationship="viewControllers" id="xoK-NA-q5U"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3z-9Q-3oI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,6 +140,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Woa-mf-IFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2821" y="64"/>
+        </scene>
+        <!--Mapas-->
+        <scene sceneID="mQ3-lt-uej">
+            <objects>
+                <tableViewController id="804-lG-lF3" customClass="MapsChooseEstacaoTableViewController" customModule="MetroforApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="V6b-UB-gnp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellSentidosMap" id="Llv-3M-V2r">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Llv-3M-V2r" id="87t-VH-GQ1">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="804-lG-lF3" id="eih-Sj-pmH"/>
+                            <outlet property="delegate" destination="804-lG-lF3" id="zxo-Al-k6k"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mapas" id="4oI-An-LEA"/>
+                    <connections>
+                        <segue destination="kiQ-Y4-M4a" kind="show" identifier="showImageMap" id="vOH-LG-xp2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="asi-Qv-bpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="666" y="1600"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XMC-BM-I0c">
+            <objects>
+                <navigationController id="kiQ-Y4-M4a" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7i5-iK-091">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.068105377689999996" green="0.59678819439999997" blue="0.06974928105" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ono-Il-BPX" kind="relationship" relationship="rootViewController" id="ALj-bz-inO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deK-DB-lrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1469" y="1600"/>
+        </scene>
+        <!--Show Map View Controller-->
+        <scene sceneID="L8Y-aD-bZ1">
+            <objects>
+                <viewController id="ono-Il-BPX" customClass="ShowMapViewController" customModule="MetroforApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kIc-UC-bGi"/>
+                        <viewControllerLayoutGuide type="bottom" id="E7x-GK-Vx5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Jn-Wk-ubZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKb-lE-o8Q">
+                                <rect key="frame" x="0.0" y="64" width="311" height="436"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jxg-1n-WjU"/>
+                    <connections>
+                        <outlet property="imageMap" destination="JKb-lE-o8Q" id="wmD-W2-hlj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QxK-WJ-cc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2210" y="1600"/>
+        </scene>
+        <!--Mapas-->
+        <scene sceneID="kuj-pT-KgA">
+            <objects>
+                <navigationController id="J8k-zc-Q1Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapas" image="imageTabMap" id="9Gb-Jx-K5F"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f79-7q-hMq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.068105377689999996" green="0.59678819439999997" blue="0.06974928105" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="804-lG-lF3" kind="relationship" relationship="rootViewController" id="I1h-En-ARD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPa-tW-gbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-150" y="1600"/>
         </scene>
         <!--Choose Sentido Table View Controller-->
         <scene sceneID="w1U-9f-Fju">
@@ -347,7 +447,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFG-Ec-W5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605" y="1563"/>
+            <point key="canvasLocation" x="666" y="2413"/>
         </scene>
         <!--Auth Facebook View Controller-->
         <scene sceneID="qBg-as-IEL">
@@ -419,12 +519,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDW-va-2YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-150" y="1563"/>
+            <point key="canvasLocation" x="-155" y="2413"/>
         </scene>
     </scenes>
     <resources>
         <image name="imageTabConf" width="51" height="51"/>
         <image name="imageTabHorarios" width="30" height="30"/>
         <image name="imageTabInicial" width="54" height="47"/>
+        <image name="imageTabMap" width="51" height="51"/>
     </resources>
 </document>

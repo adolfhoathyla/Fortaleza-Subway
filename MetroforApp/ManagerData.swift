@@ -127,4 +127,21 @@ class ManagerData {
         
     }
     
+    class func getAllLinhas() -> NSArray {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        let entity = NSEntityDescription.entityForName("Linha", inManagedObjectContext: managedContext)
+        
+        let fetchRequest = NSFetchRequest()
+        fetchRequest.entity = entity
+        
+        var error: NSError?
+        
+        var linhas = managedContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        return linhas!
+    }
+    
 }

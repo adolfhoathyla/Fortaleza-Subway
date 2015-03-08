@@ -25,6 +25,8 @@
 		16BC4BFE1AA266B10087C855 /* Estacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC4BFD1AA266B10087C855 /* Estacao.m */; };
 		16BC4C011AA266B10087C855 /* Linha.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC4C001AA266B10087C855 /* Linha.m */; };
 		16BE11CD1AACF1DC0040083F /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BE11CC1AACF1DC0040083F /* Usuario.m */; };
+		16BE11CF1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE11CE1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift */; };
+		16BE11D11AAD097E0040083F /* ShowMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE11D01AAD097E0040083F /* ShowMapViewController.swift */; };
 		16DB94B21AAB521F00A56D38 /* OAuthFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */; };
 		16DB94B61AAB55E600A56D38 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B31AAB55E600A56D38 /* Bolts.framework */; };
 		16DB94B71AAB55E600A56D38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */; };
@@ -69,6 +71,8 @@
 		16BC4C001AA266B10087C855 /* Linha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Linha.m; sourceTree = "<group>"; };
 		16BE11CB1AACF1DC0040083F /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
 		16BE11CC1AACF1DC0040083F /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
+		16BE11CE1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsChooseEstacaoTableViewController.swift; sourceTree = "<group>"; };
+		16BE11D01AAD097E0040083F /* ShowMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMapViewController.swift; sourceTree = "<group>"; };
 		16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthFacebookViewController.swift; sourceTree = "<group>"; };
 		16DB94B31AAB55E600A56D38 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				163E93C31AAC058F0035913F /* ConfigTableViewController.swift */,
 				16BC4BD41AA23CE20087C855 /* MasterViewController.swift */,
 				16BC4BD81AA23CE20087C855 /* Main.storyboard */,
+				16BE11D01AAD097E0040083F /* ShowMapViewController.swift */,
+				16BE11CE1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift */,
 				161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */,
 				16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */,
 				16BC2DB81AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift */,
@@ -283,6 +289,7 @@
 				16BC4BFE1AA266B10087C855 /* Estacao.m in Sources */,
 				161A6D9B1AABE6FB0081F40A /* HorariosTableViewController.swift in Sources */,
 				163E93C41AAC058F0035913F /* ConfigTableViewController.swift in Sources */,
+				16BE11D11AAD097E0040083F /* ShowMapViewController.swift in Sources */,
 				16BC4BF91AA255FD0087C855 /* ManagerData.swift in Sources */,
 				16BC4BD01AA23CE20087C855 /* AppDelegate.swift in Sources */,
 				16BE11CD1AACF1DC0040083F /* Usuario.m in Sources */,
@@ -292,6 +299,7 @@
 				163E93C21AABF9710035913F /* Horario.m in Sources */,
 				16BC4BD51AA23CE20087C855 /* MasterViewController.swift in Sources */,
 				16BC4C011AA266B10087C855 /* Linha.m in Sources */,
+				16BE11CF1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift in Sources */,
 				16BC2DB91AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
