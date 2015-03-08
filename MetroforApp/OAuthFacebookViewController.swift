@@ -61,7 +61,7 @@ class OAuthFacebookViewController: UIViewController, FBLoginViewDelegate {
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         self.profilePictureView.profileID = user.objectID
         self.nameLabel.text = user.name
-        
+        ManagerData.addUserWithName(user.name, email: user.objectForKey("email") as String)
     }
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {

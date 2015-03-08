@@ -18,9 +18,14 @@
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="linhaEstacao" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Estacao" inverseName="estacaoLinha" inverseEntity="Estacao" syncable="YES"/>
     </entity>
+    <entity name="Usuario" representedClassName="Usuario" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Estacao" positionX="171" positionY="-10" width="128" height="133"/>
-        <element name="Linha" positionX="-45" positionY="0" width="128" height="73"/>
         <element name="Horario" positionX="376" positionY="-0" width="128" height="103"/>
+        <element name="Linha" positionX="-45" positionY="0" width="128" height="73"/>
+        <element name="Usuario" positionX="162" positionY="180" width="128" height="75"/>
     </elements>
 </model>

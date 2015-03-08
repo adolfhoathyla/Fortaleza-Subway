@@ -107,4 +107,24 @@ class ManagerData {
         return horarios!
     }
     
+    class func addUserWithName(name: String, email: String) {
+        println("\(name) - \(email)")
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        let entity = NSEntityDescription.entityForName("Usuario", inManagedObjectContext: managedContext)
+        
+        let usuario = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        usuario.setValue(name, forKey: "nome")
+        usuario.setValue(email, forKey: "email")
+        
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+        
+    }
+    
 }

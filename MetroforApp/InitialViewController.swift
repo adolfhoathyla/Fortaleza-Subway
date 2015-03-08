@@ -106,9 +106,6 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
             let regionCircular = region as CLCircularRegion
             let userLocation = self.locationManager?.location.coordinate
             if regionCircular.containsCoordinate(userLocation!) {
-//                let date = NSDate()
-//                let calendar = NSCalendar.currentCalendar()
-//                let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
                 
                 var notification:UILocalNotification = UILocalNotification()
                 notification.category = "MY_CATEGORY"

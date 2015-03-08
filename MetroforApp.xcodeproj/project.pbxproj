@@ -24,6 +24,7 @@
 		16BC4BFB1AA264510087C855 /* ChooseEstacaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC4BFA1AA264510087C855 /* ChooseEstacaoTableViewController.swift */; };
 		16BC4BFE1AA266B10087C855 /* Estacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC4BFD1AA266B10087C855 /* Estacao.m */; };
 		16BC4C011AA266B10087C855 /* Linha.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC4C001AA266B10087C855 /* Linha.m */; };
+		16BE11CD1AACF1DC0040083F /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BE11CC1AACF1DC0040083F /* Usuario.m */; };
 		16DB94B21AAB521F00A56D38 /* OAuthFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */; };
 		16DB94B61AAB55E600A56D38 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B31AAB55E600A56D38 /* Bolts.framework */; };
 		16DB94B71AAB55E600A56D38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */; };
@@ -66,6 +67,8 @@
 		16BC4BFD1AA266B10087C855 /* Estacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Estacao.m; sourceTree = "<group>"; };
 		16BC4BFF1AA266B10087C855 /* Linha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Linha.h; sourceTree = "<group>"; };
 		16BC4C001AA266B10087C855 /* Linha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Linha.m; sourceTree = "<group>"; };
+		16BE11CB1AACF1DC0040083F /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		16BE11CC1AACF1DC0040083F /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthFacebookViewController.swift; sourceTree = "<group>"; };
 		16DB94B31AAB55E600A56D38 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				16BC4BDB1AA23CE20087C855 /* Images.xcassets */,
 				16BC4BDD1AA23CE20087C855 /* LaunchScreen.xib */,
 				16BC4BD11AA23CE20087C855 /* MetroforApp.xcdatamodeld */,
+				16BE11CB1AACF1DC0040083F /* Usuario.h */,
+				16BE11CC1AACF1DC0040083F /* Usuario.m */,
 				16BC4BFF1AA266B10087C855 /* Linha.h */,
 				16BC4C001AA266B10087C855 /* Linha.m */,
 				163E93C01AABF9710035913F /* Horario.h */,
@@ -280,6 +285,7 @@
 				163E93C41AAC058F0035913F /* ConfigTableViewController.swift in Sources */,
 				16BC4BF91AA255FD0087C855 /* ManagerData.swift in Sources */,
 				16BC4BD01AA23CE20087C855 /* AppDelegate.swift in Sources */,
+				16BE11CD1AACF1DC0040083F /* Usuario.m in Sources */,
 				16BC2DBB1AA39646004EBBD4 /* InitialViewController.swift in Sources */,
 				16BC4BD31AA23CE20087C855 /* MetroforApp.xcdatamodeld in Sources */,
 				16BC4BFB1AA264510087C855 /* ChooseEstacaoTableViewController.swift in Sources */,
