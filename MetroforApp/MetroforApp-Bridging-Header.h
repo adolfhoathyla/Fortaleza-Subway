@@ -4,3 +4,5 @@
 
 #import "Linha.h"
 #import "Estacao.h"
+#import "Horario.h"
+#import <FacebookSDK/FacebookSDK.h>

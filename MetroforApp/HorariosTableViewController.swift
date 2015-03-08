@@ -1,33 +1,37 @@
 //
-//  ChooseSentidoTableViewController.swift
+//  HorariosTableViewController.swift
 //  MetroforApp
 //
-//  Created by Adolfho Athyla on 01/03/15.
+//  Created by Adolfho Athyla on 07/03/15.
 //  Copyright (c) 2015 Adolfho Athyla. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
-class ChooseSentidoTableViewController: UITableViewController {
+class HorariosTableViewController: UITableViewController {
 
-    var sentidos = ["Ida", "Volta"]
     var estacao = ""
-    var detail = [String]()
+    var sentido = ""
+    
+    var listaHorarios = [AnyObject]()
+    
+    var _fetchedResultsController: NSFetchedResultsController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.tableFooterView = UIView()
-        
-        println("Estação \(estacao)")
-        
+        var managedData = ManagerData()
+        self.listaHorarios = managedData.getHorariosFromEstacao(self.estacao, sentido: self.sentido)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        println("\(estacao) and \(sentido)")
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,25 +42,30 @@ class ChooseSentidoTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
         return 1
     }
+    
+
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.sentidos.count
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return self.listaHorarios.count
     }
 
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellSentido", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellHorarios", forIndexPath: indexPath) as UITableViewCell
+        
+        var horario = self.listaHorarios[indexPath.row] as Horario
 
-        cell.textLabel?.text = self.sentidos[indexPath.row]
-        cell.detailTextLabel?.text = self.detail[indexPath.row]
+        cell.textLabel?.text = horario.hora
 
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showHorarios", sender: nil)
-    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,22 +102,14 @@ class ChooseSentidoTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showHorarios" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let sentido = self.sentidos[indexPath.row]
-                let titleHorario = self.detail[indexPath.row]
-                
-                (segue.destinationViewController as UINavigationController).navigationBar.topItem?.title = titleHorario
-                (segue.destinationViewController.topViewController as HorariosTableViewController).sentido = sentido
-                (segue.destinationViewController.topViewController as HorariosTableViewController).estacao = self.estacao
-            }
-        }
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
     }
-    
+    */
 
 }

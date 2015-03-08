@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161A6D9B1AABE6FB0081F40A /* HorariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */; };
+		163E93C21AABF9710035913F /* Horario.m in Sources */ = {isa = PBXBuildFile; fileRef = 163E93C11AABF9710035913F /* Horario.m */; };
+		163E93C41AAC058F0035913F /* ConfigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E93C31AAC058F0035913F /* ConfigTableViewController.swift */; };
 		16BC2DB91AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC2DB81AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift */; };
 		16BC2DBB1AA39646004EBBD4 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC2DBA1AA39646004EBBD4 /* InitialViewController.swift */; };
 		16BC2DBD1AA396E0004EBBD4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BC2DBC1AA396E0004EBBD4 /* CoreLocation.framework */; };
@@ -21,6 +24,10 @@
 		16BC4BFB1AA264510087C855 /* ChooseEstacaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC4BFA1AA264510087C855 /* ChooseEstacaoTableViewController.swift */; };
 		16BC4BFE1AA266B10087C855 /* Estacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC4BFD1AA266B10087C855 /* Estacao.m */; };
 		16BC4C011AA266B10087C855 /* Linha.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC4C001AA266B10087C855 /* Linha.m */; };
+		16DB94B21AAB521F00A56D38 /* OAuthFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */; };
+		16DB94B61AAB55E600A56D38 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B31AAB55E600A56D38 /* Bolts.framework */; };
+		16DB94B71AAB55E600A56D38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */; };
+		16DB94B81AAB55E600A56D38 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B51AAB55E600A56D38 /* FBAudienceNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorariosTableViewController.swift; sourceTree = "<group>"; };
+		163E93C01AABF9710035913F /* Horario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Horario.h; sourceTree = "<group>"; };
+		163E93C11AABF9710035913F /* Horario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Horario.m; sourceTree = "<group>"; };
+		163E93C31AAC058F0035913F /* ConfigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewController.swift; sourceTree = "<group>"; };
 		16BC2DB81AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSentidoTableViewController.swift; sourceTree = "<group>"; };
 		16BC2DBA1AA39646004EBBD4 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		16BC2DBC1AA396E0004EBBD4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -55,6 +66,10 @@
 		16BC4BFD1AA266B10087C855 /* Estacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Estacao.m; sourceTree = "<group>"; };
 		16BC4BFF1AA266B10087C855 /* Linha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Linha.h; sourceTree = "<group>"; };
 		16BC4C001AA266B10087C855 /* Linha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Linha.m; sourceTree = "<group>"; };
+		16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthFacebookViewController.swift; sourceTree = "<group>"; };
+		16DB94B31AAB55E600A56D38 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		16DB94B51AAB55E600A56D38 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = ../../../FacebookSDK/FBAudienceNetwork.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +78,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16BC2DBD1AA396E0004EBBD4 /* CoreLocation.framework in Frameworks */,
+				16DB94B61AAB55E600A56D38 /* Bolts.framework in Frameworks */,
+				16DB94B71AAB55E600A56D38 /* FacebookSDK.framework in Frameworks */,
+				16DB94B81AAB55E600A56D38 /* FBAudienceNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +97,9 @@
 		16BC4BC11AA23CE20087C855 = {
 			isa = PBXGroup;
 			children = (
+				16DB94B31AAB55E600A56D38 /* Bolts.framework */,
+				16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */,
+				16DB94B51AAB55E600A56D38 /* FBAudienceNetwork.framework */,
 				16BC2DBC1AA396E0004EBBD4 /* CoreLocation.framework */,
 				16BC4BCC1AA23CE20087C855 /* MetroforApp */,
 				16BC4BE71AA23CE20087C855 /* MetroforAppTests */,
@@ -100,8 +121,11 @@
 			children = (
 				16BC4BCF1AA23CE20087C855 /* AppDelegate.swift */,
 				16BC4BF81AA255FD0087C855 /* ManagerData.swift */,
+				163E93C31AAC058F0035913F /* ConfigTableViewController.swift */,
 				16BC4BD41AA23CE20087C855 /* MasterViewController.swift */,
 				16BC4BD81AA23CE20087C855 /* Main.storyboard */,
+				161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */,
+				16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */,
 				16BC2DB81AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift */,
 				16BC2DBA1AA39646004EBBD4 /* InitialViewController.swift */,
 				16BC4BFA1AA264510087C855 /* ChooseEstacaoTableViewController.swift */,
@@ -110,9 +134,11 @@
 				16BC4BD11AA23CE20087C855 /* MetroforApp.xcdatamodeld */,
 				16BC4BFF1AA266B10087C855 /* Linha.h */,
 				16BC4C001AA266B10087C855 /* Linha.m */,
+				163E93C01AABF9710035913F /* Horario.h */,
+				163E93C11AABF9710035913F /* Horario.m */,
 				16BC4BFC1AA266B10087C855 /* Estacao.h */,
-				16BC4BF41AA255830087C855 /* MetroforApp-Bridging-Header.h */,
 				16BC4BFD1AA266B10087C855 /* Estacao.m */,
+				16BC4BF41AA255830087C855 /* MetroforApp-Bridging-Header.h */,
 				16BC4BCD1AA23CE20087C855 /* Supporting Files */,
 			);
 			path = MetroforApp;
@@ -248,12 +274,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16DB94B21AAB521F00A56D38 /* OAuthFacebookViewController.swift in Sources */,
 				16BC4BFE1AA266B10087C855 /* Estacao.m in Sources */,
+				161A6D9B1AABE6FB0081F40A /* HorariosTableViewController.swift in Sources */,
+				163E93C41AAC058F0035913F /* ConfigTableViewController.swift in Sources */,
 				16BC4BF91AA255FD0087C855 /* ManagerData.swift in Sources */,
 				16BC4BD01AA23CE20087C855 /* AppDelegate.swift in Sources */,
 				16BC2DBB1AA39646004EBBD4 /* InitialViewController.swift in Sources */,
 				16BC4BD31AA23CE20087C855 /* MetroforApp.xcdatamodeld in Sources */,
 				16BC4BFB1AA264510087C855 /* ChooseEstacaoTableViewController.swift in Sources */,
+				163E93C21AABF9710035913F /* Horario.m in Sources */,
 				16BC4BD51AA23CE20087C855 /* MasterViewController.swift in Sources */,
 				16BC4C011AA266B10087C855 /* Linha.m in Sources */,
 				16BC2DB91AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift in Sources */,
@@ -380,6 +410,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/adolfhoathyla/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = MetroforApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,6 +427,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/adolfhoathyla/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = MetroforApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

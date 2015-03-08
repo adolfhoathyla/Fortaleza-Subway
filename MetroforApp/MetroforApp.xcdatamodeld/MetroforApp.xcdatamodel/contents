@@ -5,14 +5,22 @@
         <attribute name="linha" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="estacaoHorario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Horario" inverseName="horarioEstacao" inverseEntity="Horario" syncable="YES"/>
         <relationship name="estacaoLinha" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Linha" inverseName="linhaEstacao" inverseEntity="Linha" syncable="YES"/>
+    </entity>
+    <entity name="Horario" representedClassName="Horario" syncable="YES">
+        <attribute name="estacao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hora" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sentido" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="horarioEstacao" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Estacao" inverseName="estacaoHorario" inverseEntity="Estacao" syncable="YES"/>
     </entity>
     <entity name="Linha" representedClassName="Linha" syncable="YES">
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="linhaEstacao" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Estacao" inverseName="estacaoLinha" inverseEntity="Estacao" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Estacao" positionX="171" positionY="-10" width="128" height="133"/>
         <element name="Linha" positionX="-45" positionY="0" width="128" height="73"/>
-        <element name="Estacao" positionX="171" positionY="-10" width="128" height="118"/>
+        <element name="Horario" positionX="376" positionY="-0" width="128" height="103"/>
     </elements>
 </model>

@@ -43,6 +43,26 @@ class ManagerData {
         estacao.setValue(latitude, forKey: "latitude")
         estacao.setValue(longitude, forKey: "longitude")
         estacao.setValue(linha, forKey: "linha")
+    
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+    }
+    
+    func addHorarioWithHora(hora: String, sentido: String, estacao: String) {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        let entity = NSEntityDescription.entityForName("Horario", inManagedObjectContext: managedContext)
+        
+        let horario = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        horario.setValue(sentido, forKey: "sentido")
+        horario.setValue(hora, forKey: "hora")
+        horario.setValue(estacao, forKey: "estacao")
+        //horario.setValue(idAsInt, forKey: "idHorario")
         
         var error: NSError?
         if !managedContext.save(&error) {
@@ -65,6 +85,26 @@ class ManagerData {
         var estacoes = managedContext.executeFetchRequest(fetchRequest, error: &error)
         
         return estacoes!
+    }
+    
+    func getHorariosFromEstacao(estacao: String, sentido: String) -> NSArray {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        var entity = NSEntityDescription.entityForName("Horario", inManagedObjectContext: managedContext)
+        
+        let fetchRequest = NSFetchRequest()
+        fetchRequest.entity = entity
+        
+        let myPredicate = NSPredicate(format: "sentido = %@ AND estacao = %@", sentido, estacao)
+        fetchRequest.predicate = myPredicate
+        
+        var error: NSError?
+        
+        var horarios = managedContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        return horarios!
     }
     
 }

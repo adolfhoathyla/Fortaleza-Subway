@@ -28,14 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if !NSUserDefaults.standardUserDefaults().boolForKey("firstAcess") {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstAcess")
+            
             self.addAllLines()
             self.addAllEstacoes()
+            self.AddAllHorarios()
             //self.addRegionsMonitoring()
+        }
+        
+        if !FBSession.activeSession().isOpen {
+        //if FBSession.activeSession().state == FBSessionState.CreatedTokenLoaded {
+            println("não está logado")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("OAuthFacebook") as UIViewController
+            self.window?.makeKeyAndVisible()
+            self.window?.rootViewController?.presentViewController(loginViewController, animated: true, completion: nil)
         }
         
         return true
     }
-
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -52,12 +63,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        FBAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
     }
 
     // MARK: - Core Data stack
@@ -132,7 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func addAllEstacoes() {
         var manager = ManagerData()
-        manager.addEstacaoWithName("Estação do Athyla", latitude: -3.879383, longitude: -38.609168, linha: "Sul")
+        manager.addEstacaoWithName("Casa do Athyla", latitude: -3.879383, longitude: -38.609168, linha: "Sul")
         manager.addEstacaoWithName("Carlito Benevides", latitude: -3.894090, longitude: -38.621003, linha: "Sul")
         manager.addEstacaoWithName("Jereissati", latitude: -3.887254, longitude: -38.627102, linha: "Sul")
         manager.addEstacaoWithName("Maracanaú", latitude: -3.878559, longitude: -38.625588, linha: "Sul")
@@ -150,6 +167,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         manager.addEstacaoWithName("Benfica", latitude: -3.739647, longitude: -38.538245, linha: "Sul")
     }
     
+    func AddAllHorarios() {
+        var manager = ManagerData()
+        
+        manager.addHorarioWithHora("07:00", sentido: "Ida", estacao: "Carlito Benevides")
+        manager.addHorarioWithHora("07:03", sentido: "Ida", estacao: "Jereissati")
+        manager.addHorarioWithHora("07:06", sentido: "Ida", estacao: "Maracanaú")
+        
+    }
+    
 //    func addRegionsMonitoring() {
 //        var manager = ManagerData()
 //        var estacoes = manager.getAllEstacoes()
@@ -161,6 +187,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            initialViewController.makeRegionMonitoring(latitude: estacao.latitude as Double, longitude: estacao.longitude as Double, identifier: estacao.nome)
 //        }
 //    }
+    
+    func openSession(#allowLoginUI: Bool) -> Bool {
+        let permissions = ["public_profile", "email"]
+        
+        return FBSession.openActiveSessionWithReadPermissions(permissions, allowLoginUI: allowLoginUI, completionHandler: { (var session, var state, var err) -> Void in
+            if (err != nil) {
+                println("\(err.localizedDescription)")
+            } else {
+                self.checkSessionState(state: state)
+            }
+        })
+    }
+    
+    func checkSessionState(#state: FBSessionState){
+        
+    }
 
 }
 

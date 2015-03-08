@@ -11,14 +11,20 @@ import CoreLocation
 
 class InitialViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet var profilePictureView: FBProfilePictureView!
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var myLocation: UILabel!
+    
     var locationManager: CLLocationManager?
+    var autorizationSatus: CLAuthorizationStatus?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.initMyLocationManager()
-        self.addRegionsMonitoring()
+        //self.addRegionsMonitoring()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -62,9 +68,12 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         switch status {
         case .Restricted:
             println("Acesso restrito")
+            self.autorizationSatus = CLAuthorizationStatus.Restricted
         case .Denied:
             println("Acesso negado pelo usuário")
+            self.autorizationSatus = CLAuthorizationStatus.Denied
         case .NotDetermined:
+            self.autorizationSatus = CLAuthorizationStatus.NotDetermined
             println("Acesso não determinado")
         default:
             println("Acesso permitido, à localização")
@@ -75,6 +84,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         if shouldIAllow {
             println("Localização permitida")
             self.locationManager?.startUpdatingLocation()
+            self.addRegionsMonitoring()
         } else {
             println("Localização não permitida")
         }
@@ -89,22 +99,24 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     //Este método é chamado sempre que é criada uma região monitorada
     //então, verifico se a localzação atual do usuário está contida em alguma das regiões registradas
     func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
-        let regionCircular = region as CLCircularRegion
-        let userLocation = self.locationManager?.location.coordinate
-        if regionCircular.containsCoordinate(userLocation!) {
-            self.myLocation.text = "Está em " + region.identifier
-        }
+        //if (self.autorizationSatus == CLAuthorizationStatus.NotDetermined) {
+            let regionCircular = region as CLCircularRegion
+            let userLocation = self.locationManager?.location.coordinate
+            if regionCircular.containsCoordinate(userLocation!) {
+                self.myLocation.text = "Está na estação " + region.identifier
+            }
+        //}
     }
 
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         println("Enter region ", region.identifier)
-        self.myLocation.text = "Está em " + region.identifier
+        self.myLocation.text = "Está na estação " + region.identifier
     }
     
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
         println("Exit region ", region.identifier)
-        self.myLocation.text = "Saiu de " + region.identifier
+        self.myLocation.text = "Saiu na estação " + region.identifier
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,5 +134,5 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

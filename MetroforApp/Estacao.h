@@ -19,4 +19,5 @@
 @property (nonatomic, retain) NSString * linha;
 @property (nonatomic, retain) Linha *estacaoLinha;
 
+
 @end
