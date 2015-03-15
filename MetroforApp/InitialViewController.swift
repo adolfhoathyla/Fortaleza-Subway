@@ -27,6 +27,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "actionEstouNaEstacao", name: "actionSimPressed", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "actionNaoEstouNaEstacao", name: "actionNaoPressed", object: nil)
         
+        self.myLocation.text = "Não está em nenhuma estação"
 
         // Do any additional setup after loading the view.
     }
@@ -95,7 +96,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK - Region Monitoring
     func makeRegionMonitoring(#latitude: Double, longitude: Double, identifier: String) {
-        let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 100, identifier: identifier)
+        let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 50, identifier: identifier)
         self.locationManager?.startMonitoringForRegion(region)
     }
     
@@ -143,6 +144,9 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func actionEstouNaEstacao() {
+        self.viewDidLoad()
+    }
 
     /*
     // MARK: - Navigation

@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //actions
         var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         firstAction.identifier = "FIRST_ACTION"
-        firstAction.title = "Sim"
+        firstAction.title = "Não"
         
         firstAction.activationMode = UIUserNotificationActivationMode.Background
         firstAction.destructive = true
@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var secondAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         secondAction.identifier = "SECOND_ACTION"
-        secondAction.title = "Não"
+        secondAction.title = "Sim"
         
         secondAction.activationMode = UIUserNotificationActivationMode.Foreground
         secondAction.destructive = false
@@ -85,9 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         if identifier == "FIRST_ACTION" {
-            NSNotificationCenter.defaultCenter().postNotificationName("actionSimPressed", object: nil)
-        } else if identifier == "SECOND_ACTION" {
             NSNotificationCenter.defaultCenter().postNotificationName("actionNaoPressed", object: nil)
+        } else if identifier == "SECOND_ACTION" {
+            NSNotificationCenter.defaultCenter().postNotificationName("actionSimPressed", object: nil)
         }
         completionHandler()
     }
