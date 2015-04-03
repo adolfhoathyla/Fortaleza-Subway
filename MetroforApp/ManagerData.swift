@@ -70,7 +70,7 @@ class ManagerData {
         }
     }
     
-    func getAllEstacoes() -> NSArray {
+    class func getAllEstacoesOfLinha(linha: String) -> NSArray {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
@@ -79,6 +79,9 @@ class ManagerData {
         
         let fetchRequest = NSFetchRequest()
         fetchRequest.entity = entity
+        
+        let predicate = NSPredicate(format: "linha = %@", linha)
+        fetchRequest.predicate = predicate
         
         var error: NSError?
         

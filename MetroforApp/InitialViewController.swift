@@ -43,8 +43,9 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func addRegionsMonitoring() {
-        var manager = ManagerData()
-        var estacoes = manager.getAllEstacoes()
+        
+        //estou supondo que só existe estação Sul
+        var estacoes = ManagerData.getAllEstacoesOfLinha("Sul")
         for estacao in estacoes {
             self.makeRegionMonitoring(latitude: estacao.latitude as Double, longitude: estacao.longitude as Double, identifier: estacao.nome)
         }
@@ -106,12 +107,20 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         //if (self.autorizationSatus == CLAuthorizationStatus.NotDetermined) {
             let regionCircular = region as CLCircularRegion
             let userLocation = self.locationManager?.location.coordinate
+        
+        println(region.identifier)
+        
             if regionCircular.containsCoordinate(userLocation!) {
+                
+                //fazer a verificação se é ou não a primeira estação que o usuário está
+        
+                var dataAtual = NSDate()
                 
                 var notification:UILocalNotification = UILocalNotification()
                 notification.category = "MY_CATEGORY"
+                notification.soundName = UILocalNotificationDefaultSoundName
+                notification.applicationIconBadgeNumber = 1
                 notification.alertBody = "Você está na estação \(region.identifier)?"
-                //notification.fireDate = NSDate()
                 
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
                 
@@ -123,10 +132,13 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         //criar uma notificação
+        //fazer a verificação se é ou não a primeira estação que o usuário está
+        
         var notification:UILocalNotification = UILocalNotification()
         notification.category = "MY_CATEGORY"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.applicationIconBadgeNumber = 1
         notification.alertBody = "Você está na estação \(region.identifier)?"
-        //notification.fireDate = NSDate()
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     
@@ -146,6 +158,10 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     func actionEstouNaEstacao() {
         self.viewDidLoad()
+    }
+    
+    func actionNaoEstouNaEstacao() {
+        
     }
 
     /*

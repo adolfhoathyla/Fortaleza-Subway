@@ -27,6 +27,11 @@
 		16BE11CD1AACF1DC0040083F /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BE11CC1AACF1DC0040083F /* Usuario.m */; };
 		16BE11CF1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE11CE1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift */; };
 		16BE11D11AAD097E0040083F /* ShowMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE11D01AAD097E0040083F /* ShowMapViewController.swift */; };
+		16BE282C1ACB61F700DC44A2 /* SimuleChooseLinhaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE282B1ACB61F700DC44A2 /* SimuleChooseLinhaTableViewController.swift */; };
+		16BE28301ACB638F00DC44A2 /* SimulateChooseEstacoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE282F1ACB638F00DC44A2 /* SimulateChooseEstacoesViewController.swift */; };
+		16BEEA301ACE1ED800EF53D3 /* RRAddTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEEA2D1ACE1ED800EF53D3 /* RRAddTagView.swift */; };
+		16BEEA311ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEEA2E1ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift */; };
+		16BEEA321ACE1ED800EF53D3 /* RRTagController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEEA2F1ACE1ED800EF53D3 /* RRTagController.swift */; };
 		16DB94B21AAB521F00A56D38 /* OAuthFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */; };
 		16DB94B61AAB55E600A56D38 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B31AAB55E600A56D38 /* Bolts.framework */; };
 		16DB94B71AAB55E600A56D38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */; };
@@ -73,6 +78,11 @@
 		16BE11CC1AACF1DC0040083F /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		16BE11CE1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsChooseEstacaoTableViewController.swift; sourceTree = "<group>"; };
 		16BE11D01AAD097E0040083F /* ShowMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMapViewController.swift; sourceTree = "<group>"; };
+		16BE282B1ACB61F700DC44A2 /* SimuleChooseLinhaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimuleChooseLinhaTableViewController.swift; sourceTree = "<group>"; };
+		16BE282F1ACB638F00DC44A2 /* SimulateChooseEstacoesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulateChooseEstacoesViewController.swift; sourceTree = "<group>"; };
+		16BEEA2D1ACE1ED800EF53D3 /* RRAddTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRAddTagView.swift; sourceTree = "<group>"; };
+		16BEEA2E1ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		16BEEA2F1ACE1ED800EF53D3 /* RRTagController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRTagController.swift; sourceTree = "<group>"; };
 		16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthFacebookViewController.swift; sourceTree = "<group>"; };
 		16DB94B31AAB55E600A56D38 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 		16BC4BC11AA23CE20087C855 = {
 			isa = PBXGroup;
 			children = (
+				16BEEA2C1ACE1EBC00EF53D3 /* RRTagController */,
 				16DB94B31AAB55E600A56D38 /* Bolts.framework */,
 				16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */,
 				16DB94B51AAB55E600A56D38 /* FBAudienceNetwork.framework */,
@@ -127,29 +138,12 @@
 			isa = PBXGroup;
 			children = (
 				16BC4BCF1AA23CE20087C855 /* AppDelegate.swift */,
-				16BC4BF81AA255FD0087C855 /* ManagerData.swift */,
-				163E93C31AAC058F0035913F /* ConfigTableViewController.swift */,
-				16BC4BD41AA23CE20087C855 /* MasterViewController.swift */,
-				16BC4BD81AA23CE20087C855 /* Main.storyboard */,
-				16BE11D01AAD097E0040083F /* ShowMapViewController.swift */,
-				16BE11CE1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift */,
-				161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */,
-				16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */,
-				16BC2DB81AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift */,
-				16BC2DBA1AA39646004EBBD4 /* InitialViewController.swift */,
-				16BC4BFA1AA264510087C855 /* ChooseEstacaoTableViewController.swift */,
-				16BC4BDB1AA23CE20087C855 /* Images.xcassets */,
-				16BC4BDD1AA23CE20087C855 /* LaunchScreen.xib */,
-				16BC4BD11AA23CE20087C855 /* MetroforApp.xcdatamodeld */,
-				16BE11CB1AACF1DC0040083F /* Usuario.h */,
-				16BE11CC1AACF1DC0040083F /* Usuario.m */,
-				16BC4BFF1AA266B10087C855 /* Linha.h */,
-				16BC4C001AA266B10087C855 /* Linha.m */,
-				163E93C01AABF9710035913F /* Horario.h */,
-				163E93C11AABF9710035913F /* Horario.m */,
-				16BC4BFC1AA266B10087C855 /* Estacao.h */,
-				16BC4BFD1AA266B10087C855 /* Estacao.m */,
+				16BEEA351ACE1F1500EF53D3 /* View */,
+				16BEEA341ACE1F0B00EF53D3 /* Controller */,
+				16BEEA331ACE1EF100EF53D3 /* Model */,
 				16BC4BF41AA255830087C855 /* MetroforApp-Bridging-Header.h */,
+				16BC4BDB1AA23CE20087C855 /* Images.xcassets */,
+				16BC4BD11AA23CE20087C855 /* MetroforApp.xcdatamodeld */,
 				16BC4BCD1AA23CE20087C855 /* Supporting Files */,
 			);
 			path = MetroforApp;
@@ -178,6 +172,60 @@
 				16BC4BE91AA23CE20087C855 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16BEEA2C1ACE1EBC00EF53D3 /* RRTagController */ = {
+			isa = PBXGroup;
+			children = (
+				16BEEA2D1ACE1ED800EF53D3 /* RRAddTagView.swift */,
+				16BEEA2E1ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift */,
+				16BEEA2F1ACE1ED800EF53D3 /* RRTagController.swift */,
+			);
+			name = RRTagController;
+			path = MetroforApp;
+			sourceTree = "<group>";
+		};
+		16BEEA331ACE1EF100EF53D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16BE11CB1AACF1DC0040083F /* Usuario.h */,
+				16BC4BF81AA255FD0087C855 /* ManagerData.swift */,
+				16BE11CC1AACF1DC0040083F /* Usuario.m */,
+				16BC4BFF1AA266B10087C855 /* Linha.h */,
+				16BC4C001AA266B10087C855 /* Linha.m */,
+				163E93C01AABF9710035913F /* Horario.h */,
+				163E93C11AABF9710035913F /* Horario.m */,
+				16BC4BFC1AA266B10087C855 /* Estacao.h */,
+				16BC4BFD1AA266B10087C855 /* Estacao.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		16BEEA341ACE1F0B00EF53D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16BE282F1ACB638F00DC44A2 /* SimulateChooseEstacoesViewController.swift */,
+				163E93C31AAC058F0035913F /* ConfigTableViewController.swift */,
+				16BC4BD41AA23CE20087C855 /* MasterViewController.swift */,
+				16BE282B1ACB61F700DC44A2 /* SimuleChooseLinhaTableViewController.swift */,
+				16BE11D01AAD097E0040083F /* ShowMapViewController.swift */,
+				16BE11CE1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift */,
+				161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */,
+				16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */,
+				16BC2DB81AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift */,
+				16BC2DBA1AA39646004EBBD4 /* InitialViewController.swift */,
+				16BC4BFA1AA264510087C855 /* ChooseEstacaoTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		16BEEA351ACE1F1500EF53D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16BC4BD81AA23CE20087C855 /* Main.storyboard */,
+				16BC4BDD1AA23CE20087C855 /* LaunchScreen.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,12 +333,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BE28301ACB638F00DC44A2 /* SimulateChooseEstacoesViewController.swift in Sources */,
 				16DB94B21AAB521F00A56D38 /* OAuthFacebookViewController.swift in Sources */,
 				16BC4BFE1AA266B10087C855 /* Estacao.m in Sources */,
+				16BE282C1ACB61F700DC44A2 /* SimuleChooseLinhaTableViewController.swift in Sources */,
 				161A6D9B1AABE6FB0081F40A /* HorariosTableViewController.swift in Sources */,
 				163E93C41AAC058F0035913F /* ConfigTableViewController.swift in Sources */,
 				16BE11D11AAD097E0040083F /* ShowMapViewController.swift in Sources */,
+				16BEEA321ACE1ED800EF53D3 /* RRTagController.swift in Sources */,
+				16BEEA311ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift in Sources */,
 				16BC4BF91AA255FD0087C855 /* ManagerData.swift in Sources */,
+				16BEEA301ACE1ED800EF53D3 /* RRAddTagView.swift in Sources */,
 				16BC4BD01AA23CE20087C855 /* AppDelegate.swift in Sources */,
 				16BE11CD1AACF1DC0040083F /* Usuario.m in Sources */,
 				16BC2DBB1AA39646004EBBD4 /* InitialViewController.swift in Sources */,
