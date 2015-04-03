@@ -37,15 +37,20 @@ class SimulateChooseEstacoesViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let mapViewController = segue.destinationViewController as MapViewSimulateViagemViewController
+        mapViewController.linha = self.linha
+        mapViewController.origem = self.labelOrigem.text!
+        mapViewController.destino = self.labelDestino.text!
     }
-    */
+
     @IBAction func actionOrigem(sender: AnyObject) {
         RRTagController.displayTagController(parentController: self, tagsString: self.estacoesAsString, blockFinish: { (selectedTags, unSelectedTags) -> () in
             println(selectedTags[0].textContent)
@@ -63,6 +68,18 @@ class SimulateChooseEstacoesViewController: UIViewController {
             
         }) { () -> () in
             println("Cancelou: Destino")
+        }
+    }
+    
+    @IBAction func actionDone(sender: AnyObject) {
+        if self.labelDestino.text == "-" || self.labelOrigem.text == "-" {
+            
+            let alert = UIAlertController(title: "Ops", message: "Você deve preencher os campos origem e destino", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        } else {
+            self.performSegueWithIdentifier("showMap", sender: nil)
         }
     }
 }

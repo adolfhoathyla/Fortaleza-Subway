@@ -191,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="1469" y="1600"/>
         </scene>
-        <!--Oi-->
+        <!--Simulate Choose Estacoes View Controller-->
         <scene sceneID="P11-R2-6eH">
             <objects>
                 <viewController id="bd2-bV-Xnu" customClass="SimulateChooseEstacoesViewController" customModule="MetroforApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,11 +242,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Oi" id="PHB-OD-KiD"/>
+                    <navigationItem key="navigationItem" id="PHB-OD-KiD">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="vs0-L8-9Yu">
+                            <connections>
+                                <action selector="actionDone:" destination="bd2-bV-Xnu" id="YV3-GV-gWZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="labelDestino" destination="tmT-nb-rtk" id="wTk-Kx-6wm"/>
                         <outlet property="labelLinha" destination="EKC-b1-1Qi" id="5Tq-58-6hF"/>
                         <outlet property="labelOrigem" destination="bKc-b7-ccR" id="aTh-cR-BW6"/>
+                        <segue destination="8zH-Xl-7K7" kind="show" identifier="showMap" id="AeB-3T-lsa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1y-1b-bX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,6 +352,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHE-6k-fTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3669" y="64"/>
+        </scene>
+        <!--Map View Simulate Viagem View Controller-->
+        <scene sceneID="Bgw-2c-3UQ">
+            <objects>
+                <viewController id="8zH-Xl-7K7" customClass="MapViewSimulateViagemViewController" customModule="MetroforApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fpa-de-XXy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vr9-rS-i6L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lff-MC-uHg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-V9-Fq9">
+                                <rect key="frame" x="0.0" y="-49" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="Gaa-V9-Fq9" id="U6n-Vq-ZLH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lOo-f5-3fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3930" y="815"/>
         </scene>
         <!--Horarios Table View Controller-->
         <scene sceneID="ge2-re-vvS">

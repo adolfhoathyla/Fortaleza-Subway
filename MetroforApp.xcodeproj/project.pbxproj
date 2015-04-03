@@ -36,6 +36,8 @@
 		16DB94B61AAB55E600A56D38 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B31AAB55E600A56D38 /* Bolts.framework */; };
 		16DB94B71AAB55E600A56D38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */; };
 		16DB94B81AAB55E600A56D38 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B51AAB55E600A56D38 /* FBAudienceNetwork.framework */; };
+		16F8D9871ACE3F7C00827169 /* MapViewSimulateViagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F8D9861ACE3F7C00827169 /* MapViewSimulateViagemViewController.swift */; };
+		16F8D9891ACE3F9300827169 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F8D9881ACE3F9300827169 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		16DB94B31AAB55E600A56D38 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		16DB94B51AAB55E600A56D38 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = ../../../FacebookSDK/FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		16F8D9861ACE3F7C00827169 /* MapViewSimulateViagemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewSimulateViagemViewController.swift; sourceTree = "<group>"; };
+		16F8D9881ACE3F9300827169 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F8D9891ACE3F9300827169 /* MapKit.framework in Frameworks */,
 				16BC2DBD1AA396E0004EBBD4 /* CoreLocation.framework in Frameworks */,
 				16DB94B61AAB55E600A56D38 /* Bolts.framework in Frameworks */,
 				16DB94B71AAB55E600A56D38 /* FacebookSDK.framework in Frameworks */,
@@ -114,6 +119,7 @@
 		16BC4BC11AA23CE20087C855 = {
 			isa = PBXGroup;
 			children = (
+				16F8D9881ACE3F9300827169 /* MapKit.framework */,
 				16BEEA2C1ACE1EBC00EF53D3 /* RRTagController */,
 				16DB94B31AAB55E600A56D38 /* Bolts.framework */,
 				16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */,
@@ -206,6 +212,7 @@
 			children = (
 				16BE282F1ACB638F00DC44A2 /* SimulateChooseEstacoesViewController.swift */,
 				163E93C31AAC058F0035913F /* ConfigTableViewController.swift */,
+				16F8D9861ACE3F7C00827169 /* MapViewSimulateViagemViewController.swift */,
 				16BC4BD41AA23CE20087C855 /* MasterViewController.swift */,
 				16BE282B1ACB61F700DC44A2 /* SimuleChooseLinhaTableViewController.swift */,
 				16BE11D01AAD097E0040083F /* ShowMapViewController.swift */,
@@ -344,6 +351,7 @@
 				16BEEA311ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift in Sources */,
 				16BC4BF91AA255FD0087C855 /* ManagerData.swift in Sources */,
 				16BEEA301ACE1ED800EF53D3 /* RRAddTagView.swift in Sources */,
+				16F8D9871ACE3F7C00827169 /* MapViewSimulateViagemViewController.swift in Sources */,
 				16BC4BD01AA23CE20087C855 /* AppDelegate.swift in Sources */,
 				16BE11CD1AACF1DC0040083F /* Usuario.m in Sources */,
 				16BC2DBB1AA39646004EBBD4 /* InitialViewController.swift in Sources */,
