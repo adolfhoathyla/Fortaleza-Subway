@@ -10,6 +10,7 @@
 		161A6D9B1AABE6FB0081F40A /* HorariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */; };
 		163E93C21AABF9710035913F /* Horario.m in Sources */ = {isa = PBXBuildFile; fileRef = 163E93C11AABF9710035913F /* Horario.m */; };
 		163E93C41AAC058F0035913F /* ConfigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E93C31AAC058F0035913F /* ConfigTableViewController.swift */; };
+		16B80E371AD086A200D5C0B2 /* EstacaoMaisProxima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B80E361AD086A200D5C0B2 /* EstacaoMaisProxima.swift */; };
 		16BC2DB91AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC2DB81AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift */; };
 		16BC2DBB1AA39646004EBBD4 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC2DBA1AA39646004EBBD4 /* InitialViewController.swift */; };
 		16BC2DBD1AA396E0004EBBD4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BC2DBC1AA396E0004EBBD4 /* CoreLocation.framework */; };
@@ -55,6 +56,7 @@
 		163E93C01AABF9710035913F /* Horario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Horario.h; sourceTree = "<group>"; };
 		163E93C11AABF9710035913F /* Horario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Horario.m; sourceTree = "<group>"; };
 		163E93C31AAC058F0035913F /* ConfigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewController.swift; sourceTree = "<group>"; };
+		16B80E361AD086A200D5C0B2 /* EstacaoMaisProxima.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstacaoMaisProxima.swift; sourceTree = "<group>"; };
 		16BC2DB81AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSentidoTableViewController.swift; sourceTree = "<group>"; };
 		16BC2DBA1AA39646004EBBD4 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		16BC2DBC1AA396E0004EBBD4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -198,6 +200,7 @@
 				16BC4BF81AA255FD0087C855 /* ManagerData.swift */,
 				16BE11CC1AACF1DC0040083F /* Usuario.m */,
 				16BC4BFF1AA266B10087C855 /* Linha.h */,
+				16B80E361AD086A200D5C0B2 /* EstacaoMaisProxima.swift */,
 				16BC4C001AA266B10087C855 /* Linha.m */,
 				163E93C01AABF9710035913F /* Horario.h */,
 				163E93C11AABF9710035913F /* Horario.m */,
@@ -284,6 +287,7 @@
 				TargetAttributes = {
 					16BC4BC91AA23CE20087C855 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = MZ982Z982H;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -351,6 +355,7 @@
 				16BEEA311ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift in Sources */,
 				16BC4BF91AA255FD0087C855 /* ManagerData.swift in Sources */,
 				16BEEA301ACE1ED800EF53D3 /* RRAddTagView.swift in Sources */,
+				16B80E371AD086A200D5C0B2 /* EstacaoMaisProxima.swift in Sources */,
 				16F8D9871ACE3F7C00827169 /* MapViewSimulateViagemViewController.swift in Sources */,
 				16BC4BD01AA23CE20087C855 /* AppDelegate.swift in Sources */,
 				16BE11CD1AACF1DC0040083F /* Usuario.m in Sources */,
@@ -485,6 +490,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/adolfhoathyla/Documents/FacebookSDK,
@@ -492,6 +499,7 @@
 				INFOPLIST_FILE = MetroforApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MetroforApp/MetroforApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -502,6 +510,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/adolfhoathyla/Documents/FacebookSDK,
@@ -509,6 +519,7 @@
 				INFOPLIST_FILE = MetroforApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MetroforApp/MetroforApp-Bridging-Header.h";
 			};
 			name = Release;

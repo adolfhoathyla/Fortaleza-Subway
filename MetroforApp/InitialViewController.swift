@@ -19,6 +19,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     var autorizationSatus: CLAuthorizationStatus?
     
+    var estacoes = [Estacao]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "actionNaoEstouNaEstacao", name: "actionNaoPressed", object: nil)
         
         self.myLocation.text = "Não está em nenhuma estação"
+        self.estacaoMaisProxima.enabled = true
 
         // Do any additional setup after loading the view.
     }
@@ -45,8 +48,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     func addRegionsMonitoring() {
         
         //estou supondo que só existe estação Sul
-        var estacoes = ManagerData.getAllEstacoesOfLinha("Sul")
-        for estacao in estacoes {
+        self.estacoes = ManagerData.getAllEstacoesOfLinha("Sul") as [Estacao]
+        for estacao in self.estacoes {
             self.makeRegionMonitoring(latitude: estacao.latitude as Double, longitude: estacao.longitude as Double, identifier: estacao.nome)
         }
     }
@@ -108,8 +111,6 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
             let regionCircular = region as CLCircularRegion
             let userLocation = self.locationManager?.location.coordinate
         
-        println(region.identifier)
-        
             if regionCircular.containsCoordinate(userLocation!) {
                 
                 //fazer a verificação se é ou não a primeira estação que o usuário está
@@ -125,6 +126,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
                 
                 self.myLocation.text = "Está na estação " + region.identifier
+                
+                //self.estacaoMaisProxima.enabled = false
             }
         //}
     }
@@ -144,11 +147,13 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
         println("Enter region ", region.identifier)
         self.myLocation.text = "Está na estação " + region.identifier
+        //self.estacaoMaisProxima.enabled = false
     }
     
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
         println("Exit region ", region.identifier)
         self.myLocation.text = "Saiu da estação " + region.identifier
+        self.estacaoMaisProxima.enabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -164,6 +169,52 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         
     }
 
+    @IBOutlet var estacaoMaisProxima: UIButton!
+    
+    @IBAction func actionEstacaoMaisProxima(sender: AnyObject) {
+        
+        //if self.myLocation.text == "Não está em nenhuma estação" {
+            var estacaoMaisProximaDoUsuario = self.estacaoMaisProximaOfUserLocation(self.estacoes)
+        
+            let alert = UIAlertController(title: "Estação mais próxima", message: String(format: "Estação %@ com %.2fKm é a mais próxima", estacaoMaisProximaDoUsuario.nome, estacaoMaisProximaDoUsuario.distance / 1000), preferredStyle: UIAlertControllerStyle.Alert)
+        
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        //}
+    }
+    
+    func estacaoMaisProximaOfUserLocation(estacoesLocal: [Estacao]) -> EstacaoMaisProxima {
+        
+        var estacoesProximas = [EstacaoMaisProxima]()
+        var estacaoMaisProxima: EstacaoMaisProxima?
+        
+        for estacao in estacoesLocal {
+            var meters = self.locationManager?.location.distanceFromLocation(CLLocation(latitude: estacao.latitude as Double, longitude: estacao.longitude as Double))
+            
+            var newEstacao = EstacaoMaisProxima(nome: estacao.nome, latitude: estacao.latitude as Double, longitude: estacao.longitude as Double, distance: meters!)
+            
+            estacoesProximas.append(newEstacao)
+            
+            println("Distance for \(estacao.nome): \(meters! / 1000)")
+        }
+        
+        var minDistance = 1000000.0
+        
+        for estacao in estacoesProximas {
+            minDistance = min(minDistance, estacao.distance)
+        }
+        
+        for estacao in estacoesProximas {
+            if estacao.distance == minDistance {
+                estacaoMaisProxima = EstacaoMaisProxima(nome: estacao.nome, latitude: estacao.latitude as Double, longitude: estacao.longitude as Double, distance: minDistance)
+            }
+        }
+        
+        println("Mínima \(minDistance / 1000)")
+        
+        return estacaoMaisProxima!
+    }
+    
     /*
     // MARK: - Navigation
 
