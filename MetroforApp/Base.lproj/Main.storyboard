@@ -258,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1y-1b-bX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3019" y="815"/>
+            <point key="canvasLocation" x="2287" y="815"/>
         </scene>
         <!--Show Map View Controller-->
         <scene sceneID="L8Y-aD-bZ1">
@@ -377,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOo-f5-3fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3930" y="815"/>
+            <point key="canvasLocation" x="3166" y="815"/>
         </scene>
         <!--Horarios Table View Controller-->
         <scene sceneID="ge2-re-vvS">
@@ -532,7 +532,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O72-K9-wne">
-                                <rect key="frame" x="100" y="337" width="173" height="30"/>
+                                <rect key="frame" x="76" y="337" width="173" height="30"/>
                                 <state key="normal" title="Simule sua viagem">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -541,7 +541,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5A-Nf-nEU">
-                                <rect key="frame" x="55" y="391" width="263" height="30"/>
+                                <rect key="frame" x="31" y="391" width="263" height="30"/>
                                 <state key="normal" title="Qual a estação mais próxima de mim?">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

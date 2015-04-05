@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class InitialViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -35,7 +36,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
     }
     
-    func initMyLocationManager() {
+    private func initMyLocationManager() {
         self.locationManager = CLLocationManager()
         self.locationManager?.delegate = self
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
@@ -45,7 +46,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         var available = CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion)
     }
     
-    func addRegionsMonitoring() {
+    private func addRegionsMonitoring() {
         
         //estou supondo que só existe estação Sul
         self.estacoes = ManagerData.getAllEstacoesOfLinha("Sul") as [Estacao]
@@ -178,12 +179,19 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         
             let alert = UIAlertController(title: "Estação mais próxima", message: String(format: "Estação %@ com %.2fKm é a mais próxima", estacaoMaisProximaDoUsuario.nome, estacaoMaisProximaDoUsuario.distance / 1000), preferredStyle: UIAlertControllerStyle.Alert)
         
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+            alert.addAction(UIAlertAction(title: "Ver no mapa", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                
+                self.openMapForStation(estacaoMaisProximaDoUsuario)
+                
+            }))
+        
             self.presentViewController(alert, animated: true, completion: nil)
         //}
     }
     
-    func estacaoMaisProximaOfUserLocation(estacoesLocal: [Estacao]) -> EstacaoMaisProxima {
+    private func estacaoMaisProximaOfUserLocation(estacoesLocal: [Estacao]) -> EstacaoMaisProxima {
         
         var estacoesProximas = [EstacaoMaisProxima]()
         var estacaoMaisProxima: EstacaoMaisProxima?
@@ -213,6 +221,20 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         println("Mínima \(minDistance / 1000)")
         
         return estacaoMaisProxima!
+    }
+    
+    private func openMapForStation(station: EstacaoMaisProxima) {
+        let regionDistance:CLLocationDistance = 10000
+        var coordinates = CLLocationCoordinate2DMake(station.latitude as Double, station.longitude as Double)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        var options = [
+            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
+        ]
+        var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        var mapitem = MKMapItem(placemark: placemark)
+        mapitem.name = "Estação \(station.nome)"
+        mapitem.openInMapsWithLaunchOptions(options)
     }
     
     /*
