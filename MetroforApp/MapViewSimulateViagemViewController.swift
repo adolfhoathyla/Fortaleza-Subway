@@ -28,6 +28,9 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
         self.initMyMapView()
         
         self.addAllAnnotationsInMyMap()
+        
+        println("Origem \(origem)")
+        println("Destino \(destino)")
     }
 
     override func didReceiveMemoryWarning() {

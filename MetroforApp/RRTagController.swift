@@ -27,7 +27,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
     private var leftButton: UIBarButtonItem!
     private var rigthButton: UIBarButtonItem!
     private var _totalTagsSelected = 0
-    private let addTagView = RRAddTagView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 64))
+    //private let addTagView = RRAddTagView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 64))
     private var heightKeyboard: CGFloat = 0
     
     var blockFinih: ((selectedTags: Array<Tag>, unSelectedTags: Array<Tag>) -> ())!
@@ -44,7 +44,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
             }
             self._totalTagsSelected += newValue
             self._totalTagsSelected = (self._totalTagsSelected < 0) ? 0 : self._totalTagsSelected
-            self.navigationBarItem = UINavigationItem(title: "Tags")
+            self.navigationBarItem = UINavigationItem(title: "Estações")
             self.navigationBarItem.leftBarButtonItem = self.leftButton
             if (self._totalTagsSelected == 0) {
                 self.navigationBarItem.rightBarButtonItem = nil
@@ -71,48 +71,48 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
         return collectionTag
     }()
     
-    lazy var addNewTagCell: RRTagCollectionViewCell = {
-        let addNewTagCell = RRTagCollectionViewCell()
-        addNewTagCell.contentView.addSubview(addNewTagCell.textContent)
-        addNewTagCell.textContent.text = "+"
-        addNewTagCell.frame.size = CGSizeMake(40, 40)
-        addNewTagCell.backgroundColor = UIColor.grayColor()
-        return addNewTagCell
-    }()
+//    lazy var addNewTagCell: RRTagCollectionViewCell = {
+//        let addNewTagCell = RRTagCollectionViewCell()
+//        addNewTagCell.contentView.addSubview(addNewTagCell.textContent)
+//        addNewTagCell.textContent.text = "+"
+//        addNewTagCell.frame.size = CGSizeMake(40, 40)
+//        addNewTagCell.backgroundColor = UIColor.grayColor()
+//        return addNewTagCell
+//    }()
     
-    lazy var controlPanelEdition: UIView = {
-        let controlPanel = UIView(frame: CGRectMake(0, UIScreen.mainScreen().bounds.size.height + 50, UIScreen.mainScreen().bounds.size.width, 50))
-        controlPanel.backgroundColor = UIColor.whiteColor()
-        
-        let buttonCancel = UIButton(frame: CGRectMake(10, 10, 100, 30))
-        buttonCancel.layer.borderColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1).CGColor
-        buttonCancel.layer.borderWidth = 2
-        buttonCancel.backgroundColor = UIColor.whiteColor()
-        buttonCancel.setTitle("Cancel", forState: UIControlState.Normal)
-        buttonCancel.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        buttonCancel.titleLabel?.font = UIFont.boldSystemFontOfSize(17)
-        buttonCancel.layer.cornerRadius = 15
-        buttonCancel.addTarget(self, action: "cancelEditTag", forControlEvents: UIControlEvents.TouchUpInside)
-
-        let buttonAccept = UIButton(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width - 110, 10, 100, 30))
-        buttonAccept.layer.borderColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1).CGColor
-        buttonAccept.layer.borderWidth = 2
-        buttonAccept.backgroundColor = UIColor.whiteColor()
-        buttonAccept.setTitle("Create", forState: UIControlState.Normal)
-        buttonAccept.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        buttonAccept.titleLabel?.font = UIFont.boldSystemFontOfSize(17)
-        buttonAccept.layer.cornerRadius = 15
-        buttonAccept.addTarget(self, action: "createNewTag", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        controlPanel.addSubview(buttonCancel)
-        controlPanel.addSubview(buttonAccept)
-        return controlPanel
-    }()
+//    lazy var controlPanelEdition: UIView = {
+//        let controlPanel = UIView(frame: CGRectMake(0, UIScreen.mainScreen().bounds.size.height + 50, UIScreen.mainScreen().bounds.size.width, 50))
+//        controlPanel.backgroundColor = UIColor.whiteColor()
+//        
+//        let buttonCancel = UIButton(frame: CGRectMake(10, 10, 100, 30))
+//        buttonCancel.layer.borderColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1).CGColor
+//        buttonCancel.layer.borderWidth = 2
+//        buttonCancel.backgroundColor = UIColor.whiteColor()
+//        buttonCancel.setTitle("Cancel", forState: UIControlState.Normal)
+//        buttonCancel.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+//        buttonCancel.titleLabel?.font = UIFont.boldSystemFontOfSize(17)
+//        buttonCancel.layer.cornerRadius = 15
+//        buttonCancel.addTarget(self, action: "cancelEditTag", forControlEvents: UIControlEvents.TouchUpInside)
+//
+//        let buttonAccept = UIButton(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width - 110, 10, 100, 30))
+//        buttonAccept.layer.borderColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1).CGColor
+//        buttonAccept.layer.borderWidth = 2
+//        buttonAccept.backgroundColor = UIColor.whiteColor()
+//        buttonAccept.setTitle("Create", forState: UIControlState.Normal)
+//        buttonAccept.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+//        buttonAccept.titleLabel?.font = UIFont.boldSystemFontOfSize(17)
+//        buttonAccept.layer.cornerRadius = 15
+//        buttonAccept.addTarget(self, action: "createNewTag", forControlEvents: UIControlEvents.TouchUpInside)
+//        
+//        controlPanel.addSubview(buttonCancel)
+//        controlPanel.addSubview(buttonAccept)
+//        return controlPanel
+//    }()
     
     lazy var navigationBar: UINavigationBar = {
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 64))
         
-        self.navigationBarItem = UINavigationItem(title: "Tags")
+        self.navigationBarItem = UINavigationItem(title: "Estações")
         self.navigationBarItem.leftBarButtonItem = self.leftButton
         
         navigationBar.pushNavigationItem(self.navigationBarItem, animated: true)
@@ -147,24 +147,24 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
         self.view.endEditing(true)
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.4,
             initialSpringVelocity: 0.4, options: UIViewAnimationOptions.allZeros, animations: { () -> Void in
-            self.addTagView.frame.origin.y = 0
-            self.controlPanelEdition.frame.origin.y = UIScreen.mainScreen().bounds.size.height
+            //self.addTagView.frame.origin.y = 0
+            //self.controlPanelEdition.frame.origin.y = UIScreen.mainScreen().bounds.size.height
             self.collectionTag.alpha = 1
             }) { (anim:Bool) -> Void in
             
         }
     }
     
-    func createNewTag() {
-        let spaceSet = NSCharacterSet.whitespaceCharacterSet()
-        let contentTag = addTagView.textEdit.text.stringByTrimmingCharactersInSet(spaceSet)
-        if strlen(contentTag) > 0 {
-            let newTag = Tag(isSelected: false, isLocked: false, textContent: contentTag)
-            tags.insert(newTag, atIndex: tags.count)
-            collectionTag.reloadData()            
-        }
-        cancelEditTag()
-    }
+//    func createNewTag() {
+//        let spaceSet = NSCharacterSet.whitespaceCharacterSet()
+//        let contentTag = addTagView.textEdit.text.stringByTrimmingCharactersInSet(spaceSet)
+//        if strlen(contentTag) > 0 {
+//            let newTag = Tag(isSelected: false, isLocked: false, textContent: contentTag)
+//            tags.insert(newTag, atIndex: tags.count)
+//            collectionTag.reloadData()            
+//        }
+//        cancelEditTag()
+//    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tags.count + 1
@@ -188,6 +188,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
                 tags[indexPath.row].isSelected = true
                 selectedCell?.animateSelection(tags[indexPath.row].isSelected)
                 totalTagsSelected = 1
+                self.finishTagController()
             }
             else {
                 tags[indexPath.row].isSelected = false
@@ -195,17 +196,17 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
                 totalTagsSelected = -1
             }
         }
-        else {
-            addTagView.textEdit.text = nil
-            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4,
-                options: UIViewAnimationOptions.allZeros, animations: { () -> Void in
-                self.collectionTag.alpha = 0.3
-                self.addTagView.frame.origin.y = 64
-                }, completion: { (anim: Bool) -> Void in
-                    self.addTagView.textEdit.becomeFirstResponder()
-                    println("")
-            })
-        }
+//        else {
+//            addTagView.textEdit.text = nil
+//            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4,
+//                options: UIViewAnimationOptions.allZeros, animations: { () -> Void in
+//                self.collectionTag.alpha = 0.3
+//                self.addTagView.frame.origin.y = 64
+//                }, completion: { (anim: Bool) -> Void in
+//                    self.addTagView.textEdit.becomeFirstResponder()
+//                    println("")
+//            })
+//        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -228,7 +229,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
                 heightKeyboard = keyboardSize.height
                 UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4,
                     options: UIViewAnimationOptions.allZeros, animations: { () -> Void in
-                    self.controlPanelEdition.frame.origin.y = self.view.frame.size.height - self.heightKeyboard - 50
+                    //self.controlPanelEdition.frame.origin.y = self.view.frame.size.height - self.heightKeyboard - 50
                 }, completion: nil)
             }
         }
@@ -250,8 +251,8 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
         
         totalTagsSelected = 0
         self.view.addSubview(collectionTag)
-        self.view.addSubview(addTagView)
-        self.view.addSubview(controlPanelEdition)
+        //self.view.addSubview(addTagView)
+        //self.view.addSubview(controlPanelEdition)
         self.view.addSubview(navigationBar)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)

@@ -128,7 +128,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
                 
                 self.myLocation.text = "Está na estação " + region.identifier
                 
-                //self.estacaoMaisProxima.enabled = false
+                self.estacaoMaisProxima.enabled = false
             }
         //}
     }
@@ -148,7 +148,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
         println("Enter region ", region.identifier)
         self.myLocation.text = "Está na estação " + region.identifier
-        //self.estacaoMaisProxima.enabled = false
+        self.estacaoMaisProxima.enabled = false
     }
     
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
@@ -174,7 +174,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func actionEstacaoMaisProxima(sender: AnyObject) {
         
-        //if self.myLocation.text == "Não está em nenhuma estação" {
+        if self.myLocation.text == "Não está em nenhuma estação" {
             var estacaoMaisProximaDoUsuario = self.estacaoMaisProximaOfUserLocation(self.estacoes)
         
             let alert = UIAlertController(title: "Estação mais próxima", message: String(format: "Estação %@ com %.2fKm é a mais próxima", estacaoMaisProximaDoUsuario.nome, estacaoMaisProximaDoUsuario.distance / 1000), preferredStyle: UIAlertControllerStyle.Alert)
@@ -188,7 +188,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
             }))
         
             self.presentViewController(alert, animated: true, completion: nil)
-        //}
+        }
     }
     
     private func estacaoMaisProximaOfUserLocation(estacoesLocal: [Estacao]) -> EstacaoMaisProxima {
