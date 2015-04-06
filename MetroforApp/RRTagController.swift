@@ -117,6 +117,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
         
         navigationBar.pushNavigationItem(self.navigationBarItem, animated: true)
         navigationBar.tintColor = colorSelectedTag
+        navigationBar.backgroundColor = UIColor.blueColor()
         return navigationBar
     }()
     
@@ -188,6 +189,8 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
                 tags[indexPath.row].isSelected = true
                 selectedCell?.animateSelection(tags[indexPath.row].isSelected)
                 totalTagsSelected = 1
+                
+                //adicionei esta linha para quando o usuário escolher a tag, a tela sumir
                 self.finishTagController()
             }
             else {
@@ -247,6 +250,10 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
         self.view.backgroundColor = UIColor.whiteColor()
 
         leftButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelTagController")
+        
+        //alterei a cor do cancel
+        leftButton.tintColor = UIColor.redColor()
+        
         rigthButton = UIBarButtonItem(title: "OK", style: UIBarButtonItemStyle.Done, target: self, action: "finishTagController")
         
         totalTagsSelected = 0

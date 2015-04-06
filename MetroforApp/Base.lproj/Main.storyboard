@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1y-1b-bX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287" y="815"/>
+            <point key="canvasLocation" x="4549" y="791"/>
         </scene>
         <!--Show Map View Controller-->
         <scene sceneID="L8Y-aD-bZ1">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOo-f5-3fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3166" y="815"/>
+            <point key="canvasLocation" x="5369" y="791"/>
         </scene>
         <!--Horarios Table View Controller-->
         <scene sceneID="ge2-re-vvS">
@@ -474,7 +474,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tmd-PG-ehI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="815"/>
+            <point key="canvasLocation" x="3676" y="791"/>
+        </scene>
+        <!--Search Destine Table View Controller-->
+        <scene sceneID="kB9-32-FQk">
+            <objects>
+                <tableViewController id="C0f-V4-SJO" customClass="SearchDestineTableViewController" customModule="MetroforApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="twR-Yu-AA4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Procure seu destino" id="gz1-79-b6g">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellPlace" id="0uY-cO-yOh">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uY-cO-yOh" id="jUx-Cc-m50">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="C0f-V4-SJO" id="quk-5z-KsI"/>
+                            <outlet property="delegate" destination="C0f-V4-SJO" id="DXe-dI-C2M"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="mySearchBar" destination="gz1-79-b6g" id="uTj-RZ-B8S"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Agl-75-2jp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3659" y="1600"/>
         </scene>
         <!--Inicial-->
         <scene sceneID="i12-dF-PJs">
@@ -548,6 +582,15 @@
                                 </state>
                                 <connections>
                                     <action selector="actionEstacaoMaisProxima:" destination="Eyl-fw-Ogu" eventType="touchUpInside" id="kjc-hD-7y8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ji-6h-7kr">
+                                <rect key="frame" x="12" y="285" width="300" height="30"/>
+                                <state key="normal" title="Qual a estação mais perto do meu destino?">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="C0f-V4-SJO" kind="show" id="g41-Vh-bIE"/>
                                 </connections>
                             </button>
                         </subviews>
