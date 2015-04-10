@@ -22,7 +22,7 @@ class HorariosTableViewController: UITableViewController {
         super.viewDidLoad()
         
         var managedData = ManagerData()
-        self.listaHorarios = managedData.getHorariosFromEstacao(self.estacao, sentido: self.sentido)
+        self.listaHorarios = managedData.getHorariosFromEstacao(self.estacao, sentido: self.sentido) as [(AnyObject)]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -57,9 +57,9 @@ class HorariosTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellHorarios", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellHorarios", forIndexPath: indexPath) as! UITableViewCell
         
-        var horario = self.listaHorarios[indexPath.row] as Horario
+        var horario = self.listaHorarios[indexPath.row] as! Horario
 
         cell.textLabel?.text = horario.hora
 

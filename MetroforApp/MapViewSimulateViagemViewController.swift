@@ -60,7 +60,7 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
     }
     
     func addAllAnnotationsInMyMap() {
-        self.estacoes = ManagerData.getAllEstacoesOfLinha(self.linha) as [Estacao]
+        self.estacoes = ManagerData.getAllEstacoesOfLinha(self.linha) as! [Estacao]
         
         for estacao in self.estacoes {
             
@@ -107,7 +107,7 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
         
         for av in views {
             if av.annotation is MKPointAnnotation {
-                var annotationView = av as MKPinAnnotationView
+                var annotationView = av as! MKPinAnnotationView
                 
                 if annotationView.annotation.title == "Estação \(self.origem)" {
                     annotationView.pinColor = MKPinAnnotationColor.Green

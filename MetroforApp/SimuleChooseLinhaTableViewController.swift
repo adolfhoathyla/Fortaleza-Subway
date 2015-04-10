@@ -21,7 +21,7 @@ class SimuleChooseLinhaTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.linhas = ManagerData.getAllLinhas() as [Linha]
+        self.linhas = ManagerData.getAllLinhas() as! [Linha]
 
     }
 
@@ -45,7 +45,7 @@ class SimuleChooseLinhaTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellLinha", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellLinha", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
         cell.textLabel?.text = self.linhas[indexPath.row].nome
@@ -100,7 +100,7 @@ class SimuleChooseLinhaTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        let simulateChooseEstacao = segue.destinationViewController as SimulateChooseEstacoesViewController
+        let simulateChooseEstacao = segue.destinationViewController as! SimulateChooseEstacoesViewController
         
         let index = self.tableView.indexPathForSelectedRow()?.row
         let linhaEscolhida = self.linhas[index!]

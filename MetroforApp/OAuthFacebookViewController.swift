@@ -37,11 +37,11 @@ class OAuthFacebookViewController: UIViewController, FBLoginViewDelegate {
     }
     
     override func viewDidDisappear(animated: Bool) {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let mytabBar = appDelegate.window?.rootViewController as UITabBarController
-        let myNavigation = mytabBar.viewControllers?[1] as UINavigationController
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let mytabBar = appDelegate.window?.rootViewController as! UITabBarController
+        let myNavigation = mytabBar.viewControllers?[1] as! UINavigationController
         
-        let initialViewController = myNavigation.topViewController as InitialViewController
+        let initialViewController = myNavigation.topViewController as! InitialViewController
         
         initialViewController.nameLabel.text = self.nameLabel.text
         initialViewController.profilePictureView.profileID = self.profilePictureView.profileID
@@ -61,7 +61,7 @@ class OAuthFacebookViewController: UIViewController, FBLoginViewDelegate {
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         self.profilePictureView.profileID = user.objectID
         self.nameLabel.text = user.name
-        ManagerData.addUserWithName(user.name, email: user.objectForKey("email") as String)
+        ManagerData.addUserWithName(user.name, email: user.objectForKey("email") as! String)
     }
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {

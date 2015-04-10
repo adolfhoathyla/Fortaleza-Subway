@@ -46,7 +46,7 @@ class ChooseSentidoTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellSentido", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellSentido", forIndexPath: indexPath) as! UITableViewCell
 
         cell.textLabel?.text = self.sentidos[indexPath.row]
         cell.detailTextLabel?.text = self.detail[indexPath.row]
@@ -103,9 +103,9 @@ class ChooseSentidoTableViewController: UITableViewController {
                 let sentido = self.sentidos[indexPath.row]
                 let titleHorario = self.detail[indexPath.row]
                 
-                (segue.destinationViewController as UINavigationController).navigationBar.topItem?.title = titleHorario
-                (segue.destinationViewController.topViewController as HorariosTableViewController).sentido = sentido
-                (segue.destinationViewController.topViewController as HorariosTableViewController).estacao = self.estacao
+                (segue.destinationViewController as! UINavigationController).navigationBar.topItem?.title = titleHorario
+                (segue.destinationViewController.topViewController as! HorariosTableViewController).sentido = sentido
+                (segue.destinationViewController.topViewController as! HorariosTableViewController).estacao = self.estacao
             }
         }
     }

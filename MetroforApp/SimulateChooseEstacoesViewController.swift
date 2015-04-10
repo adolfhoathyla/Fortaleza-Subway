@@ -24,7 +24,7 @@ class SimulateChooseEstacoesViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        let estacoes = ManagerData.getAllEstacoesOfLinha(self.linha) as [Estacao]
+        let estacoes = ManagerData.getAllEstacoesOfLinha(self.linha) as! [Estacao]
         
         for estacaoString in estacoes {
             self.estacoesAsString.append(estacaoString.nome)
@@ -45,7 +45,7 @@ class SimulateChooseEstacoesViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        let mapViewController = segue.destinationViewController as MapViewSimulateViagemViewController
+        let mapViewController = segue.destinationViewController as! MapViewSimulateViagemViewController
         mapViewController.linha = self.linha
         mapViewController.origem = self.labelOrigem.text!
         mapViewController.destino = self.labelDestino.text!

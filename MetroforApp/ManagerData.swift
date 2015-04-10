@@ -12,7 +12,7 @@ import CoreData
 class ManagerData {
     
     func addLinhaWithName(nome: String) {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
@@ -31,7 +31,7 @@ class ManagerData {
     }
     
     func addEstacaoWithName(nome: String, latitude: Double, longitude: Double, linha: String) {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
@@ -51,7 +51,7 @@ class ManagerData {
     }
     
     func addHorarioWithHora(hora: String, sentido: String, estacao: String) {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
@@ -71,7 +71,7 @@ class ManagerData {
     }
     
     class func getAllEstacoesOfLinha(linha: String) -> NSArray {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
@@ -91,7 +91,7 @@ class ManagerData {
     }
     
     func getHorariosFromEstacao(estacao: String, sentido: String) -> NSArray {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
@@ -112,7 +112,7 @@ class ManagerData {
     
     class func addUserWithName(name: String, email: String) {
         println("\(name) - \(email)")
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
@@ -131,7 +131,7 @@ class ManagerData {
     }
     
     class func getAllLinhas() -> NSArray {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         

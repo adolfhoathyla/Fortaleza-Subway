@@ -49,7 +49,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     private func addRegionsMonitoring() {
         
         //estou supondo que só existe estação Sul
-        self.estacoes = ManagerData.getAllEstacoesOfLinha("Sul") as [Estacao]
+        self.estacoes = ManagerData.getAllEstacoesOfLinha("Sul") as! [Estacao]
         for estacao in self.estacoes {
             self.makeRegionMonitoring(latitude: estacao.latitude as Double, longitude: estacao.longitude as Double, identifier: estacao.nome)
         }
@@ -66,7 +66,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var locationsArray = locations as NSArray
-        var location = locationsArray.lastObject as CLLocation
+        var location = locationsArray.lastObject as! CLLocation
         println("latitude: \(location.coordinate.latitude)")
         println("longitude: \(location.coordinate.longitude)")
     }
@@ -109,7 +109,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     //então, verifico se a localzação atual do usuário está contida em alguma das regiões registradas
     func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
         //if (self.autorizationSatus == CLAuthorizationStatus.NotDetermined) {
-            let regionCircular = region as CLCircularRegion
+            let regionCircular = region as! CLCircularRegion
             let userLocation = self.locationManager?.location.coordinate
         
             if regionCircular.containsCoordinate(userLocation!) {
@@ -229,7 +229,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
         var options = [
             MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
-            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
+            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span),
+            MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving
         ]
         var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
         var mapitem = MKMapItem(placemark: placemark)

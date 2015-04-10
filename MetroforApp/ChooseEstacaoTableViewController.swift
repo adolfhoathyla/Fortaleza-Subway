@@ -41,7 +41,7 @@ class ChooseEstacaoTableViewController: UITableViewController, NSFetchedResultsC
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        let sectionInfo = self.fetchedResultsController.sections![section] as! NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
     
@@ -89,7 +89,7 @@ class ChooseEstacaoTableViewController: UITableViewController, NSFetchedResultsC
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellEstacao", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellEstacao", forIndexPath: indexPath) as! UITableViewCell
         self.configureCell(cell, atIndexPath: indexPath)
         return cell
     }
@@ -99,7 +99,7 @@ class ChooseEstacaoTableViewController: UITableViewController, NSFetchedResultsC
     }
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
         cell.textLabel!.text = object.valueForKey("nome")!.description
     }
 
@@ -145,12 +145,12 @@ class ChooseEstacaoTableViewController: UITableViewController, NSFetchedResultsC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSentido" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let estacao = self.fetchedResultsController.objectAtIndexPath(indexPath) as Estacao
-                (segue.destinationViewController.topViewController as ChooseSentidoTableViewController).estacao = estacao.nome
-                (segue.destinationViewController.topViewController as ChooseSentidoTableViewController).managedObjectContext = self.managedObjectContext
-                (segue.destinationViewController.topViewController as ChooseSentidoTableViewController).navigationController?.navigationBar.topItem?.title = estacao.nome
-                (segue.destinationViewController.topViewController as ChooseSentidoTableViewController).detail.append("\(estacao.nome) -> Fortaleza")
-                (segue.destinationViewController.topViewController as ChooseSentidoTableViewController).detail.append("Fortaleza -> \(estacao.nome)")
+                let estacao = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Estacao
+                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).estacao = estacao.nome
+                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).managedObjectContext = self.managedObjectContext
+                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).navigationController?.navigationBar.topItem?.title = estacao.nome
+                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).detail.append("\(estacao.nome) -> Fortaleza")
+                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).detail.append("Fortaleza -> \(estacao.nome)")
             }
         }
     }

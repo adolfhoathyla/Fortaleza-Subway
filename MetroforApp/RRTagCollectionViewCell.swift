@@ -12,7 +12,7 @@ let RRTagCollectionViewCellIdentifier = "RRTagCollectionViewCellIdentifier"
 
 class RRTagCollectionViewCell: UICollectionViewCell {
     
-    var isSelected: Bool = false
+    var isSelectedNew: Bool = false
     
     lazy var textContent: UILabel! = {
         let textContent = UILabel(frame: CGRectZero)
@@ -31,10 +31,10 @@ class RRTagCollectionViewCell: UICollectionViewCell {
         textContent.sizeToFit()
         textContent.frame.size.width = textContent.frame.size.width + 30
         textContent.frame.size.height = textContent.frame.size.height + 20
-        isSelected = tag.isSelected
+        isSelectedNew = tag.isSelected
         textContent.backgroundColor = UIColor.clearColor()
-        self.textContent.layer.backgroundColor = (self.isSelected == true) ? colorSelectedTag.CGColor : colorUnselectedTag.CGColor
-        self.textContent.textColor = (self.isSelected == true) ? colorTextSelectedTag : colorTextUnSelectedTag
+        self.textContent.layer.backgroundColor = (self.isSelectedNew == true) ? colorSelectedTag.CGColor : colorUnselectedTag.CGColor
+        self.textContent.textColor = (self.isSelectedNew == true) ? colorTextSelectedTag : colorTextUnSelectedTag
     }
     
     func initAddButtonContent() {
@@ -48,13 +48,13 @@ class RRTagCollectionViewCell: UICollectionViewCell {
     }
     
     func animateSelection(selection: Bool) {
-        isSelected = selection
+        isSelectedNew = selection
     
         self.textContent.frame.size = CGSizeMake(self.textContent.frame.size.width - 20, self.textContent.frame.size.height - 20)
         self.textContent.frame.origin = CGPointMake(self.textContent.frame.origin.x + 10, self.textContent.frame.origin.y + 10)
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.allZeros, animations: { () -> Void in
-            self.textContent.layer.backgroundColor = (self.isSelected == true) ? colorSelectedTag.CGColor : colorUnselectedTag.CGColor
-            self.textContent.textColor = (self.isSelected == true) ? colorTextSelectedTag : colorTextUnSelectedTag
+            self.textContent.layer.backgroundColor = (self.isSelectedNew == true) ? colorSelectedTag.CGColor : colorUnselectedTag.CGColor
+            self.textContent.textColor = (self.isSelectedNew == true) ? colorTextSelectedTag : colorTextUnSelectedTag
             self.textContent.frame.size = CGSizeMake(self.textContent.frame.size.width + 20, self.textContent.frame.size.height + 20)
             self.textContent.center = CGPointMake(self.contentView.frame.size.width / 2, self.contentView.frame.size.height / 2)
         }, completion: nil)

@@ -56,10 +56,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showEstacao" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let line = self.fetchedResultsController.objectAtIndexPath(indexPath) as Linha
-                (segue.destinationViewController.topViewController as ChooseEstacaoTableViewController).linha = line.nome
-                (segue.destinationViewController.topViewController as ChooseEstacaoTableViewController).managedObjectContext = self.managedObjectContext
-                (segue.destinationViewController.topViewController as ChooseEstacaoTableViewController).navigationController?.navigationBar.topItem?.title = line.nome
+                let line = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Linha
+                (segue.destinationViewController.topViewController as! ChooseEstacaoTableViewController).linha = line.nome
+                (segue.destinationViewController.topViewController as! ChooseEstacaoTableViewController).managedObjectContext = self.managedObjectContext
+                (segue.destinationViewController.topViewController as! ChooseEstacaoTableViewController).navigationController?.navigationBar.topItem?.title = line.nome
             }
         }
     }
@@ -71,12 +71,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        let sectionInfo = self.fetchedResultsController.sections![section] as! NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         self.configureCell(cell, atIndexPath: indexPath)
         return cell
     }
@@ -86,7 +86,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
         cell.textLabel!.text = object.valueForKey("nome")!.description
         if cell.textLabel!.text != "Sul" {
             cell.selectionStyle = UITableViewCellSelectionStyle.Gray

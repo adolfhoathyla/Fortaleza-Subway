@@ -20,13 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
         
-        let tabBarController = self.window!.rootViewController as UITabBarController
+        let tabBarController = self.window!.rootViewController as! UITabBarController
         
         tabBarController.selectedIndex = 1;
         
-        let controller = tabBarController.viewControllers?.first as UINavigationController
+        let controller = tabBarController.viewControllers?.first as! UINavigationController
         
-        let master = controller.topViewController as MasterViewController
+        let master = controller.topViewController as! MasterViewController
         master.managedObjectContext = self.managedObjectContext
         
         //Se for o primeiro acesso, vamos popular o banco (:
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //if FBSession.activeSession().state == FBSessionState.CreatedTokenLoaded {
             println("não está logado")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("OAuthFacebook") as UIViewController
+            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("OAuthFacebook") as! UIViewController
             self.window?.makeKeyAndVisible()
             self.window?.rootViewController?.presentViewController(loginViewController, animated: true, completion: nil)
         }
@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let categories:NSSet = NSSet(objects: category)
         
         let type:UIUserNotificationType = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound
-        let mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: type, categories: categories)
+        let mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: type, categories: categories as Set<NSObject>)
         
         UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
         
@@ -131,7 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "BEPiD.MetroforApp" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as NSURL
+        return urls[urls.count-1] as! NSURL
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
@@ -154,7 +154,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
-            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict as [NSObject : AnyObject])
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog("Unresolved error \(error), \(error!.userInfo)")
@@ -210,8 +210,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         manager.addEstacaoWithName("Mondubim", latitude: -3.807392, longitude: -38.577355, linha: "Sul")
         manager.addEstacaoWithName("Manoel Sátiro", latitude: -3.798295, longitude: -38.574918, linha: "Sul")
         manager.addEstacaoWithName("Vila Pery", latitude: -3.783916, longitude: -38.571985, linha: "Sul")
-        manager.addEstacaoWithName("Parangaba", latitude: -3.779772, longitude: -38.570811, linha: "Sul")
-        manager.addEstacaoWithName("Couto Fernandes", latitude: -3.756626, longitude: -38.557616, linha: "Sul")
+        manager.addEstacaoWithName("Parangaba", latitude: -3.775648, longitude: -38.563614, linha: "Sul")
+        manager.addEstacaoWithName("Couto Fernandes", latitude: -3.757276, longitude: -38.557599, linha: "Sul")
         manager.addEstacaoWithName("Porangabussu", latitude: -3.754729, longitude: -38.554633, linha: "Sul")
         manager.addEstacaoWithName("Benfica", latitude: -3.739647, longitude: -38.538245, linha: "Sul")
     }

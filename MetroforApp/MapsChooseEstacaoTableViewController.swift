@@ -51,7 +51,7 @@ class MapsChooseEstacaoTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellSentidosMap", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellSentidosMap", forIndexPath: indexPath) as! UITableViewCell
         
         
         cell.textLabel?.text = self.objects[indexPath.row]
@@ -108,7 +108,7 @@ class MapsChooseEstacaoTableViewController: UITableViewController {
         
         if segue.identifier == "showImageMap" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let showImageViewController = segue.destinationViewController.topViewController as ShowMapViewController
+                let showImageViewController = segue.destinationViewController.topViewController as! ShowMapViewController
                 showImageViewController.nameImage = self.objects[indexPath.row]
                 (segue.destinationViewController).navigationBar.topItem?.title = self.objects[indexPath.row]
             }

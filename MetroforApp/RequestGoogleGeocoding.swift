@@ -36,24 +36,24 @@ class RequestGoogleGeocoding {
     }
     
     private func treatMyData(data: NSData, completeBlock: () -> ()) {
-        let response = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(), error: nil) as NSDictionary
+        let response = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(), error: nil) as! NSDictionary
         
-        let status = response.valueForKey("status") as String
+        let status = response.valueForKey("status") as! String
         
         if status == "OK" {
             
-            let result = response.valueForKey("results") as NSArray
+            let result = response.valueForKey("results") as! NSArray
             
-            let addresses = result.valueForKey("formatted_address") as NSArray
+            let addresses = result.valueForKey("formatted_address") as! NSArray
             
-            let locations = response.valueForKey("results")?.valueForKey("geometry") as NSArray
+            let locations = response.valueForKey("results")?.valueForKey("geometry") as! NSArray
             
-            let latitudes = locations.valueForKey("location")?.valueForKey("lat") as NSArray
+            let latitudes = locations.valueForKey("location")?.valueForKey("lat") as! NSArray
             
-            let longitudes = locations.valueForKey("location")?.valueForKey("lng") as NSArray
+            let longitudes = locations.valueForKey("location")?.valueForKey("lng") as! NSArray
             
             for var i = 0; i < addresses.count; i++ {
-                var place = Place(latitude: latitudes[i] as Double, longitude: longitudes[i] as Double, address: addresses[i] as String)
+                var place = Place(latitude: latitudes[i] as! Double, longitude: longitudes[i] as! Double, address: addresses[i] as! String)
                 
                 self.places.append(place)
                 
