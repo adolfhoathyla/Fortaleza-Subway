@@ -67,8 +67,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var locationsArray = locations as NSArray
         var location = locationsArray.lastObject as! CLLocation
-        println("latitude: \(location.coordinate.latitude)")
-        println("longitude: \(location.coordinate.longitude)")
+//        println("latitude: \(location.coordinate.latitude)")
+//        println("longitude: \(location.coordinate.longitude)")
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -116,15 +116,15 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
                 
                 //fazer a verificação se é ou não a primeira estação que o usuário está
         
-                var dataAtual = NSDate()
-                
-                var notification:UILocalNotification = UILocalNotification()
-                notification.category = "MY_CATEGORY"
-                notification.soundName = UILocalNotificationDefaultSoundName
-                notification.applicationIconBadgeNumber = 1
-                notification.alertBody = "Você está na estação \(region.identifier)?"
-                
-                UIApplication.sharedApplication().scheduleLocalNotification(notification)
+//                var dataAtual = NSDate()
+//                
+//                var notification:UILocalNotification = UILocalNotification()
+//                notification.category = "MY_CATEGORY"
+//                notification.soundName = UILocalNotificationDefaultSoundName
+//                notification.applicationIconBadgeNumber = 1
+//                notification.alertBody = "Você está na estação \(region.identifier)?"
+//                
+//                UIApplication.sharedApplication().scheduleLocalNotification(notification)
                 
                 self.myLocation.text = "Está na estação " + region.identifier
                 
@@ -151,11 +151,11 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         self.estacaoMaisProxima.enabled = false
     }
     
-    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
-        println("Exit region ", region.identifier)
-        self.myLocation.text = "Saiu da estação " + region.identifier
-        self.estacaoMaisProxima.enabled = true
-    }
+//    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+//        println("Exit region ", region.identifier)
+//        self.myLocation.text = "Saiu da estação " + region.identifier
+//        self.estacaoMaisProxima.enabled = true
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -206,7 +206,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
             println("Distance for \(estacao.nome): \(meters! / 1000)")
         }
         
-        var minDistance = 1000000.0
+        var minDistance = 1000000000000000.0
         
         for estacao in estacoesProximas {
             minDistance = min(minDistance, estacao.distance)

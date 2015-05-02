@@ -50,10 +50,6 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
     */
     
     func initMyMapView() {
-//        self.locationManager = CLLocationManager()
-//        self.locationManager?.delegate = self
-//        self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-//        self.locationManager?.requestAlwaysAuthorization()
         
         self.myMapView.delegate = self
         self.myMapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
@@ -71,6 +67,13 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
             annotationEstacao.coordinate = location.coordinate
             annotationEstacao.title = "Estação \(estacao.nome)"
             annotationEstacao.subtitle = "Linha \(estacao.linha)"
+            
+            if self.origem == estacao.nome {
+                annotationEstacao.subtitle = "Origem"
+            }
+            if self.destino == estacao.nome {
+                annotationEstacao.subtitle = "Destino"
+            }
             
             self.myMapView.addAnnotation(annotationEstacao)
         }
@@ -107,14 +110,18 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
         
         for av in views {
             if av.annotation is MKPointAnnotation {
-                var annotationView = av as! MKPinAnnotationView
+                var annotationView = av as! MKAnnotationView
+                
+                annotationView.image = UIImage(named: "pinoEstacao")
                 
                 if annotationView.annotation.title == "Estação \(self.origem)" {
-                    annotationView.pinColor = MKPinAnnotationColor.Green
+                    //self.myMapView.selectAnnotation(annotationView.annotation, animated: true)
+                    annotationView.image = UIImage(named: "pinoOrigemDestino")
                 }
                 
                 if annotationView.annotation.title == "Estação \(self.destino)" {
-                    annotationView.pinColor = MKPinAnnotationColor.Purple
+                    //self.myMapView.selectAnnotation(annotationView.annotation, animated: true)
+                    annotationView.image = UIImage(named: "pinoOrigemDestino")
                 }
             }
         }
