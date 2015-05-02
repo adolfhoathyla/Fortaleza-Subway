@@ -214,6 +214,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         manager.addEstacaoWithName("Couto Fernandes", latitude: -3.757276, longitude: -38.557599, linha: "Sul")
         manager.addEstacaoWithName("Porangabussu", latitude: -3.754729, longitude: -38.554633, linha: "Sul")
         manager.addEstacaoWithName("Benfica", latitude: -3.739647, longitude: -38.538245, linha: "Sul")
+        manager.addEstacaoWithName("São Benedito", latitude: -3.739095, longitude: -38.538334, linha: "Sul")
+        manager.addEstacaoWithName("José de Alencar", latitude: -3.739131, longitude: -38.538322, linha: "Sul")
+        manager.addEstacaoWithName("Chico da Silva", latitude: -3.739134, longitude: -38.538278, linha: "Sul")
     }
     
     func AddAllHorarios() {

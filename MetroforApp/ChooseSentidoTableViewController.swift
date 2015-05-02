@@ -103,9 +103,9 @@ class ChooseSentidoTableViewController: UITableViewController {
                 let sentido = self.sentidos[indexPath.row]
                 let titleHorario = self.detail[indexPath.row]
                 
-                (segue.destinationViewController as! UINavigationController).navigationBar.topItem?.title = titleHorario
-                (segue.destinationViewController.topViewController as! HorariosTableViewController).sentido = sentido
-                (segue.destinationViewController.topViewController as! HorariosTableViewController).estacao = self.estacao
+                segue.destinationViewController.navigationItem.title = titleHorario
+                (segue.destinationViewController as! HorariosTableViewController).sentido = sentido
+                (segue.destinationViewController as! HorariosTableViewController).estacao = self.estacao
             }
         }
     }

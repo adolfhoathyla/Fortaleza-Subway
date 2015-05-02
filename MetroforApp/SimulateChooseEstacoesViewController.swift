@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Adolfho Athyla. All rights reserved.
 //
 
+
 import UIKit
 
 class SimulateChooseEstacoesViewController: UIViewController {
@@ -72,7 +73,7 @@ class SimulateChooseEstacoesViewController: UIViewController {
     }
     
     @IBAction func actionDone(sender: AnyObject) {
-        if self.labelDestino.text == "-" || self.labelOrigem.text == "-" {
+        if self.labelDestino.text == "Escolha" || self.labelOrigem.text == "Escolha" {
             
             let alert = UIAlertController(title: "Ops", message: "Você deve preencher os campos origem e destino", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))

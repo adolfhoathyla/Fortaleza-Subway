@@ -57,9 +57,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if segue.identifier == "showEstacao" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let line = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Linha
-                (segue.destinationViewController.topViewController as! ChooseEstacaoTableViewController).linha = line.nome
-                (segue.destinationViewController.topViewController as! ChooseEstacaoTableViewController).managedObjectContext = self.managedObjectContext
-                (segue.destinationViewController.topViewController as! ChooseEstacaoTableViewController).navigationController?.navigationBar.topItem?.title = line.nome
+                (segue.destinationViewController as! ChooseEstacaoTableViewController).linha = line.nome
+                (segue.destinationViewController as! ChooseEstacaoTableViewController).managedObjectContext = self.managedObjectContext
+                (segue.destinationViewController as! ChooseEstacaoTableViewController).navigationController?.navigationBar.topItem?.title = line.nome
             }
         }
     }

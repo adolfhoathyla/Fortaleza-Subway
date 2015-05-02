@@ -146,11 +146,11 @@ class ChooseEstacaoTableViewController: UITableViewController, NSFetchedResultsC
         if segue.identifier == "showSentido" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let estacao = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Estacao
-                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).estacao = estacao.nome
-                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).managedObjectContext = self.managedObjectContext
-                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).navigationController?.navigationBar.topItem?.title = estacao.nome
-                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).detail.append("\(estacao.nome) -> Fortaleza")
-                (segue.destinationViewController.topViewController as! ChooseSentidoTableViewController).detail.append("Fortaleza -> \(estacao.nome)")
+                (segue.destinationViewController as! ChooseSentidoTableViewController).estacao = estacao.nome
+                (segue.destinationViewController as! ChooseSentidoTableViewController).managedObjectContext = self.managedObjectContext
+                (segue.destinationViewController as! ChooseSentidoTableViewController).navigationController?.navigationBar.topItem?.title = estacao.nome
+                (segue.destinationViewController as! ChooseSentidoTableViewController).detail.append("\(estacao.nome) -> Fortaleza")
+                (segue.destinationViewController as! ChooseSentidoTableViewController).detail.append("Fortaleza -> \(estacao.nome)")
             }
         }
     }

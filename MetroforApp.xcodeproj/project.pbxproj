@@ -124,15 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		169C671A1AF2E155004797BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16BC2DBC1AA396E0004EBBD4 /* CoreLocation.framework */,
+				16DB94B51AAB55E600A56D38 /* FBAudienceNetwork.framework */,
+				16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */,
+				16DB94B31AAB55E600A56D38 /* Bolts.framework */,
+				16F8D9881ACE3F9300827169 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		16BC4BC11AA23CE20087C855 = {
 			isa = PBXGroup;
 			children = (
-				16F8D9881ACE3F9300827169 /* MapKit.framework */,
+				169C671A1AF2E155004797BE /* Frameworks */,
 				16BEEA2C1ACE1EBC00EF53D3 /* RRTagController */,
-				16DB94B31AAB55E600A56D38 /* Bolts.framework */,
-				16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */,
-				16DB94B51AAB55E600A56D38 /* FBAudienceNetwork.framework */,
-				16BC2DBC1AA396E0004EBBD4 /* CoreLocation.framework */,
 				16BC4BCC1AA23CE20087C855 /* MetroforApp */,
 				16BC4BE71AA23CE20087C855 /* MetroforAppTests */,
 				16BC4BCB1AA23CE20087C855 /* Products */,
