@@ -67,7 +67,7 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Ver no mapa", style: UIAlertActionStyle.Default, handler: { (alert) -> Void in
             
-            self.openMapForStation(estacaoMaisProxima)
+            self.openMapForStation(estacaoMaisProxima, place: self.places[indexPath.row])
             
         }))
     
@@ -151,19 +151,31 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
         return estacaoMaisProxima!
     }
     
-    private func openMapForStation(station: EstacaoMaisProxima) {
+    private func openMapForStation(station: EstacaoMaisProxima, place: Place) {
         let regionDistance:CLLocationDistance = 10000
-        var coordinates = CLLocationCoordinate2DMake(station.latitude as Double, station.longitude as Double)
-        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        
+        let coordinatesSource = CLLocationCoordinate2DMake(station.latitude as Double, station.longitude as Double)
+        let regionSpanSource = MKCoordinateRegionMakeWithDistance(coordinatesSource, regionDistance, regionDistance)
+        
+        let coordinatesDestination = CLLocationCoordinate2DMake(place.latitude as Double, place.longitude as Double)
+        let regionSpanDestination = MKCoordinateRegionMakeWithDistance(coordinatesDestination, regionDistance, regionDistance)
+        
         var options = [
-            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
-            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span),
+            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpanSource.center),
+            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpanSource.span),
             MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving
         ]
-        var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-        var mapitem = MKMapItem(placemark: placemark)
-        mapitem.name = "Estação \(station.nome)"
-        mapitem.openInMapsWithLaunchOptions(options)
+        
+        let placemarkSource = MKPlacemark(coordinate: coordinatesSource, addressDictionary: nil)
+        let mapitemSource = MKMapItem(placemark: placemarkSource)
+        mapitemSource.name = "Estação \(station.nome)"
+        
+        let placemarkDestination = MKPlacemark(coordinate: coordinatesDestination, addressDictionary: nil)
+        let mapitemDestination = MKMapItem(placemark: placemarkDestination)
+        mapitemDestination.name = place.address
+        
+        MKMapItem.openMapsWithItems([mapitemSource, mapitemDestination], launchOptions: options)
+        
     }
     
     // MARK: - SEARCH BAR
