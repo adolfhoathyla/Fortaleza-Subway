@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController = self.window!.rootViewController as! UITabBarController
         
-        tabBarController.selectedIndex = 1;
+        tabBarController.selectedIndex = 0;
         
-        let controller = tabBarController.viewControllers?.first as! UINavigationController
-        
-        let master = controller.topViewController as! MasterViewController
-        master.managedObjectContext = self.managedObjectContext
+//        let controller = tabBarController.viewControllers?.first as! UINavigationController
+//        
+//        let master = controller.topViewController as! MasterViewController
+//        master.managedObjectContext = self.managedObjectContext
         
         //Se for o primeiro acesso, vamos popular o banco (:
         if !NSUserDefaults.standardUserDefaults().boolForKey("firstAcess") {

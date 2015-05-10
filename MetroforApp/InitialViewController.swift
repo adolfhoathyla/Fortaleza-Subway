@@ -32,6 +32,9 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         
         self.myLocation.text = "Não está em nenhuma estação"
         self.estacaoMaisProxima.enabled = true
+        
+        self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 5
+        self.profilePictureView.layer.masksToBounds = true
 
         // Do any additional setup after loading the view.
     }
@@ -177,7 +180,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         if self.myLocation.text == "Não está em nenhuma estação" {
             var estacaoMaisProximaDoUsuario = self.estacaoMaisProximaOfUserLocation(self.estacoes)
         
-            let alert = UIAlertController(title: "Estação mais próxima", message: String(format: "Estação %@ com %.2fKm é a mais próxima", estacaoMaisProximaDoUsuario.nome, estacaoMaisProximaDoUsuario.distance / 1000), preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: String(stringInterpolation: "Estação ", estacaoMaisProximaDoUsuario.nome), message: String(format: "Estação %@ com %.2fKm é a mais próxima", estacaoMaisProximaDoUsuario.nome, estacaoMaisProximaDoUsuario.distance / 1000), preferredStyle: UIAlertControllerStyle.Alert)
         
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
         

@@ -39,7 +39,7 @@ class OAuthFacebookViewController: UIViewController, FBLoginViewDelegate {
     override func viewDidDisappear(animated: Bool) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let mytabBar = appDelegate.window?.rootViewController as! UITabBarController
-        let myNavigation = mytabBar.viewControllers?[1] as! UINavigationController
+        let myNavigation = mytabBar.viewControllers?[0] as! UINavigationController
         
         let initialViewController = myNavigation.topViewController as! InitialViewController
         

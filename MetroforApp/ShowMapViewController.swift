@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ShowMapViewController: UIViewController {
+class ShowMapViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var imageMap: UIImageView!
     var nameImage = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let myScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        myScrollView.minimumZoomScale = 1
+        myScrollView.maximumZoomScale = 9
+        myScrollView.delegate = self
+        
+        self.view.addSubview(myScrollView)
 
         // Do any additional setup after loading the view.
         
@@ -38,6 +45,14 @@ class ShowMapViewController: UIViewController {
         }
         
         self.imageMap.image = UIImage(named: name)
+        
+        myScrollView.addSubview(imageMap)
+        
+        self.imageMap.userInteractionEnabled = true
+        
+        let pinchReconizer = UIPinchGestureRecognizer(target: self, action: "zoomMap:")
+        self.imageMap.addGestureRecognizer(pinchReconizer)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +60,32 @@ class ShowMapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func zoomMap(sender: UIPinchGestureRecognizer) {
+        
+        let currentScale = self.imageMap.frame.size.width / self.imageMap.bounds.size.width
+        var newScale = currentScale * sender.scale
+        
+        let minimumScale = CGFloat(1)
+        let maximumScale = CGFloat(9)
+        
+        if newScale < minimumScale {
+            newScale = minimumScale
+        }
+        
+        if newScale > maximumScale {
+            newScale = maximumScale
+        }
+        
+        let transform = CGAffineTransformMakeScale(newScale, newScale)
+        self.imageMap.transform = transform
+        sender.scale = 1
+        
+    }
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return self.imageMap
+    }
+    
     /*
     // MARK: - Navigation
 

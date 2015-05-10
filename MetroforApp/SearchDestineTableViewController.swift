@@ -163,7 +163,7 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
         var options = [
             MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpanSource.center),
             MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpanSource.span),
-            MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving
+            MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking
         ]
         
         let placemarkSource = MKPlacemark(coordinate: coordinatesSource, addressDictionary: nil)
