@@ -365,23 +365,54 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-V9-Fq9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <view alpha="0.69999999999999973" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-7J-vdi">
+                                <rect key="frame" x="0.0" y="85" width="600" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lu-sL-duq">
+                                        <rect key="frame" x="89" y="13" width="423" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="423" id="e5c-Na-9nc"/>
+                                            <constraint firstAttribute="height" constant="21" id="lgv-vT-4pQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="5Lu-sL-duq" secondAttribute="centerY" id="5Rp-Oc-93a"/>
+                                    <constraint firstAttribute="centerX" secondItem="5Lu-sL-duq" secondAttribute="centerX" constant="-0.5" id="O2w-L7-wTj"/>
+                                    <constraint firstAttribute="height" constant="47" id="qoz-bs-xj3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gaa-V9-Fq9" firstAttribute="bottom" secondItem="Lff-MC-uHg" secondAttribute="bottomMargin" id="5mw-Fq-gfN"/>
+                            <constraint firstItem="rgH-7J-vdi" firstAttribute="top" secondItem="Fpa-de-XXy" secondAttribute="bottom" constant="21" id="6TR-zN-cdv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rgH-7J-vdi" secondAttribute="trailing" constant="-16" id="7Fo-oR-4ue"/>
+                            <constraint firstItem="rgH-7J-vdi" firstAttribute="leading" secondItem="Lff-MC-uHg" secondAttribute="leadingMargin" constant="-16" id="GYm-Sq-sJ1"/>
                             <constraint firstItem="Gaa-V9-Fq9" firstAttribute="leading" secondItem="Lff-MC-uHg" secondAttribute="leadingMargin" constant="-16" id="QqB-1g-lD9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Gaa-V9-Fq9" secondAttribute="trailing" constant="-16" id="UCm-Qm-Lwh"/>
                             <constraint firstItem="Gaa-V9-Fq9" firstAttribute="top" secondItem="Lff-MC-uHg" secondAttribute="topMargin" id="XkY-it-DcN"/>
+                            <constraint firstItem="Vr9-rS-i6L" firstAttribute="top" secondItem="rgH-7J-vdi" secondAttribute="bottom" constant="404" id="laK-Yl-gHc"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="laK-Yl-gHc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="gaB-TI-NMS"/>
                     <connections>
                         <outlet property="myMapView" destination="Gaa-V9-Fq9" id="U6n-Vq-ZLH"/>
+                        <outlet property="statusViagem" destination="5Lu-sL-duq" id="JIe-AA-Pjl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOo-f5-3fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3091.875" y="1018.75"/>
+            <point key="canvasLocation" x="3091" y="1018"/>
         </scene>
         <!--Horarios Table View Controller-->
         <scene sceneID="ge2-re-vvS">

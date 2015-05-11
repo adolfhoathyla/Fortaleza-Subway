@@ -14,6 +14,7 @@ class SimulateChooseEstacoesViewController: UIViewController {
     @IBOutlet var labelLinha: UILabel!
     var linha = ""
     var estacoesAsString = [String]()
+    var estacaoInicial: String?
 
     @IBOutlet var labelDestino: UILabel!
     @IBOutlet var labelOrigem: UILabel!
@@ -50,6 +51,7 @@ class SimulateChooseEstacoesViewController: UIViewController {
         mapViewController.linha = self.linha
         mapViewController.origem = self.labelOrigem.text!
         mapViewController.destino = self.labelDestino.text!
+        mapViewController.estacaoInicial = self.estacaoInicial
     }
 
     @IBAction func actionOrigem(sender: AnyObject) {

@@ -13,9 +13,12 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
 
     var locationManager: CLLocationManager?
     
+    @IBOutlet var statusViagem: UILabel!
+    
     var linha = ""
     var origem = ""
     var destino = ""
+    var estacaoInicial: String?
     
     var estacoes = [Estacao]()
     
@@ -29,8 +32,33 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
         
         self.addAllAnnotationsInMyMap()
         
-        println("Origem \(origem)")
-        println("Destino \(destino)")
+        if let initialStation = self.estacaoInicial {
+            if initialStation == "Nenhuma" {
+                self.statusViagem.text = "Não está em nenhuma estação"
+            } else {
+                self.statusViagem.text = "Está na estação \(initialStation)"
+            }
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("ENTER_REGION", object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            if let estacao = notification.userInfo?.values.first as? String {
+                println("MAP VIEW: Entrei da estação \(estacao)")
+                self.statusViagem.text = "Chegou na estação \(estacao)"
+            }
+            
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("EXIT_REGION", object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            if let estacao = notification.userInfo?.values.first as? String {
+                println("MAP VIEW: Saí da estação \(estacao)")
+                self.statusViagem.text = "Saiu da estação \(estacao)"
+            }
+            
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,4 +154,5 @@ class MapViewSimulateViagemViewController: UIViewController, CLLocationManagerDe
             }
         }
     }
+
 }

@@ -11,6 +11,7 @@ import UIKit
 class SimuleChooseLinhaTableViewController: UITableViewController {
     
     var linhas = [Linha]()
+    var estacaoInicial: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +107,7 @@ class SimuleChooseLinhaTableViewController: UITableViewController {
         let linhaEscolhida = self.linhas[index!]
         
         simulateChooseEstacao.linha = linhaEscolhida.nome
+        simulateChooseEstacao.estacaoInicial = self.estacaoInicial
         simulateChooseEstacao.navigationController?.navigationBar.topItem?.title = linhaEscolhida.nome
         
     }

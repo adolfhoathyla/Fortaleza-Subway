@@ -22,6 +22,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     var estacoes = [Estacao]()
     
+    var estacaoInicial = "Nenhuma"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +31,32 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "actionEstouNaEstacao", name: "actionSimPressed", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "actionNaoEstouNaEstacao", name: "actionNaoPressed", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("INIT_IN_REGION", object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            if let estacao = notification.userInfo?.values.first as? String {
+                println("Iniciei na estação \(estacao)")
+                self.estacaoInicial = estacao
+            }
+            
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("ENTER_REGION", object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            if let estacao = notification.userInfo?.values.first as? String {
+                println("Entrei da estação \(estacao)")
+            }
+            
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("EXIT_REGION", object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            if let estacao = notification.userInfo?.values.first as? String {
+                println("Saí da estação \(estacao)")
+            }
+
+            
+        }
         
         self.myLocation.text = "Não está em nenhuma estação"
         self.estacaoMaisProxima.enabled = true
@@ -38,6 +66,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
 
         // Do any additional setup after loading the view.
     }
+    
     
     private func initMyLocationManager() {
         self.locationManager = CLLocationManager()
@@ -92,7 +121,6 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
             shouldIAllow = true
         }
         
-        NSNotificationCenter.defaultCenter().postNotificationName("Autorização foi modificada", object: nil)
         if shouldIAllow {
             println("Localização permitida")
             self.locationManager?.startUpdatingLocation()
@@ -131,9 +159,11 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
                 
                 self.myLocation.text = "Está na estação " + region.identifier
                 
+                NSNotificationCenter.defaultCenter().postNotificationName("INIT_IN_REGION", object: nil, userInfo: ["estacao": region.identifier])
+                
                 self.estacaoMaisProxima.enabled = false
+                
             }
-        //}
     }
 
     
@@ -152,13 +182,19 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         println("Enter region ", region.identifier)
         self.myLocation.text = "Está na estação " + region.identifier
         self.estacaoMaisProxima.enabled = false
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("ENTER_REGION", object: self, userInfo: ["estacao": region.identifier])
+        
     }
     
-//    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
 //        println("Exit region ", region.identifier)
 //        self.myLocation.text = "Saiu da estação " + region.identifier
 //        self.estacaoMaisProxima.enabled = true
-//    }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("EXIT_REGION", object: self, userInfo: ["estacao": region.identifier])
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -241,14 +277,20 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         mapitem.openInMapsWithLaunchOptions(options)
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "goChooseLinha" {
+            let tableLinhaVC = segue.destinationViewController as! SimuleChooseLinhaTableViewController
+            tableLinhaVC.estacaoInicial = self.estacaoInicial
+        }
+        
     }
-    */
+
     
 }
