@@ -218,7 +218,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         
             let alert = UIAlertController(title: String(stringInterpolation: "Estação ", estacaoMaisProximaDoUsuario.nome), message: String(format: "Estação %@ com %.2fKm é a mais próxima", estacaoMaisProximaDoUsuario.nome, estacaoMaisProximaDoUsuario.distance / 1000), preferredStyle: UIAlertControllerStyle.Alert)
         
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Cancel, handler: nil))
         
             alert.addAction(UIAlertAction(title: "Ver no mapa", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
                 

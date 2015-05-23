@@ -22,7 +22,7 @@ class SimulateChooseEstacoesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.labelLinha.text = self.linha
+        self.labelLinha.text = "Linha " + self.linha
         
         // Do any additional setup after loading the view.
         

@@ -198,7 +198,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func addAllEstacoes() {
         var manager = ManagerData()
-        //manager.addEstacaoWithName("Casa do Athyla", latitude: -3.879383, longitude: -38.609168, linha: "Sul")
+        manager.addEstacaoWithName("Casa do Athyla", latitude: -3.879383, longitude: -38.609168, linha: "Sul")
         manager.addEstacaoWithName("Carlito Benevides", latitude: -3.894090, longitude: -38.621003, linha: "Sul")
         manager.addEstacaoWithName("Jereissati", latitude: -3.887254, longitude: -38.627102, linha: "Sul")
         manager.addEstacaoWithName("Maracanaú", latitude: -3.878559, longitude: -38.625588, linha: "Sul")
@@ -212,7 +212,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         manager.addEstacaoWithName("Vila Pery", latitude: -3.783916, longitude: -38.571985, linha: "Sul")
         manager.addEstacaoWithName("Parangaba", latitude: -3.775648, longitude: -38.563614, linha: "Sul")
         manager.addEstacaoWithName("Couto Fernandes", latitude: -3.757276, longitude: -38.557599, linha: "Sul")
-        manager.addEstacaoWithName("Porangabussu", latitude: -3.754729, longitude: -38.554633, linha: "Sul")
+        manager.addEstacaoWithName("Porangabussu", latitude: -3.751283, longitude: -38.551447, linha: "Sul")
         manager.addEstacaoWithName("Benfica", latitude: -3.739647, longitude: -38.538245, linha: "Sul")
         //manager.addEstacaoWithName("São Benedito", latitude: -3.739095, longitude: -38.538334, linha: "Sul")
         //manager.addEstacaoWithName("José de Alencar", latitude: -3.739131, longitude: -38.538322, linha: "Sul")

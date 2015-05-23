@@ -10,6 +10,21 @@
 		161A6D9B1AABE6FB0081F40A /* HorariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */; };
 		163E93C21AABF9710035913F /* Horario.m in Sources */ = {isa = PBXBuildFile; fileRef = 163E93C11AABF9710035913F /* Horario.m */; };
 		163E93C41AAC058F0035913F /* ConfigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E93C31AAC058F0035913F /* ConfigTableViewController.swift */; };
+		16B3A3B51B110459000F9B9A /* AltoAlegre.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3B41B110459000F9B9A /* AltoAlegre.gpx */; };
+		16B3A3B71B110460000F9B9A /* Aracape.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3B61B110460000F9B9A /* Aracape.gpx */; };
+		16B3A3B91B110468000F9B9A /* Benfica.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3B81B110468000F9B9A /* Benfica.gpx */; };
+		16B3A3BB1B110471000F9B9A /* CarlitoBenevides.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3BA1B110471000F9B9A /* CarlitoBenevides.gpx */; };
+		16B3A3BD1B11047B000F9B9A /* CoutoFernandes.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3BC1B11047B000F9B9A /* CoutoFernandes.gpx */; };
+		16B3A3BF1B110484000F9B9A /* Esperanca.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3BE1B110484000F9B9A /* Esperanca.gpx */; };
+		16B3A3C11B11048F000F9B9A /* Jereissati.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3C01B11048F000F9B9A /* Jereissati.gpx */; };
+		16B3A3C31B11049A000F9B9A /* ManoelSatiro.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3C21B11049A000F9B9A /* ManoelSatiro.gpx */; };
+		16B3A3C51B1104A2000F9B9A /* Maracana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3C41B1104A2000F9B9A /* Maracana.gpx */; };
+		16B3A3C71B1104AB000F9B9A /* Mondubim.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3C61B1104AB000F9B9A /* Mondubim.gpx */; };
+		16B3A3C91B1104B4000F9B9A /* Parangaba.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3C81B1104B4000F9B9A /* Parangaba.gpx */; };
+		16B3A3CB1B1104BE000F9B9A /* Porangabussu.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3CA1B1104BE000F9B9A /* Porangabussu.gpx */; };
+		16B3A3CD1B1104C6000F9B9A /* RachelDeQueiroz.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3CC1B1104C6000F9B9A /* RachelDeQueiroz.gpx */; };
+		16B3A3CF1B1104CE000F9B9A /* VilaPery.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3CE1B1104CE000F9B9A /* VilaPery.gpx */; };
+		16B3A3D11B1104D6000F9B9A /* VirgilioTavora.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3D01B1104D6000F9B9A /* VirgilioTavora.gpx */; };
 		16B7E6A11AD1FE5A00B69D3B /* SearchDestineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7E6A01AD1FE5A00B69D3B /* SearchDestineTableViewController.swift */; };
 		16B7E6A31AD2066F00B69D3B /* RequestGoogleGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7E6A21AD2066F00B69D3B /* RequestGoogleGeocoding.swift */; };
 		16B7E6A71AD215D100B69D3B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7E6A61AD215D100B69D3B /* Place.swift */; };
@@ -59,6 +74,21 @@
 		163E93C01AABF9710035913F /* Horario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Horario.h; sourceTree = "<group>"; };
 		163E93C11AABF9710035913F /* Horario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Horario.m; sourceTree = "<group>"; };
 		163E93C31AAC058F0035913F /* ConfigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewController.swift; sourceTree = "<group>"; };
+		16B3A3B41B110459000F9B9A /* AltoAlegre.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AltoAlegre.gpx; sourceTree = "<group>"; };
+		16B3A3B61B110460000F9B9A /* Aracape.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Aracape.gpx; sourceTree = "<group>"; };
+		16B3A3B81B110468000F9B9A /* Benfica.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Benfica.gpx; sourceTree = "<group>"; };
+		16B3A3BA1B110471000F9B9A /* CarlitoBenevides.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CarlitoBenevides.gpx; sourceTree = "<group>"; };
+		16B3A3BC1B11047B000F9B9A /* CoutoFernandes.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoutoFernandes.gpx; sourceTree = "<group>"; };
+		16B3A3BE1B110484000F9B9A /* Esperanca.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Esperanca.gpx; sourceTree = "<group>"; };
+		16B3A3C01B11048F000F9B9A /* Jereissati.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Jereissati.gpx; sourceTree = "<group>"; };
+		16B3A3C21B11049A000F9B9A /* ManoelSatiro.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ManoelSatiro.gpx; sourceTree = "<group>"; };
+		16B3A3C41B1104A2000F9B9A /* Maracana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Maracana.gpx; sourceTree = "<group>"; };
+		16B3A3C61B1104AB000F9B9A /* Mondubim.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Mondubim.gpx; sourceTree = "<group>"; };
+		16B3A3C81B1104B4000F9B9A /* Parangaba.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Parangaba.gpx; sourceTree = "<group>"; };
+		16B3A3CA1B1104BE000F9B9A /* Porangabussu.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Porangabussu.gpx; sourceTree = "<group>"; };
+		16B3A3CC1B1104C6000F9B9A /* RachelDeQueiroz.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RachelDeQueiroz.gpx; sourceTree = "<group>"; };
+		16B3A3CE1B1104CE000F9B9A /* VilaPery.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VilaPery.gpx; sourceTree = "<group>"; };
+		16B3A3D01B1104D6000F9B9A /* VirgilioTavora.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VirgilioTavora.gpx; sourceTree = "<group>"; };
 		16B7E6A01AD1FE5A00B69D3B /* SearchDestineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDestineTableViewController.swift; sourceTree = "<group>"; };
 		16B7E6A21AD2066F00B69D3B /* RequestGoogleGeocoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestGoogleGeocoding.swift; sourceTree = "<group>"; };
 		16B7E6A61AD215D100B69D3B /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = ../Place.swift; sourceTree = "<group>"; };
@@ -136,9 +166,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		16B3A3B31B11001A000F9B9A /* Estações GPX */ = {
+			isa = PBXGroup;
+			children = (
+				16B3A3D01B1104D6000F9B9A /* VirgilioTavora.gpx */,
+				16B3A3CE1B1104CE000F9B9A /* VilaPery.gpx */,
+				16B3A3CC1B1104C6000F9B9A /* RachelDeQueiroz.gpx */,
+				16B3A3CA1B1104BE000F9B9A /* Porangabussu.gpx */,
+				16B3A3C81B1104B4000F9B9A /* Parangaba.gpx */,
+				16B3A3C61B1104AB000F9B9A /* Mondubim.gpx */,
+				16B3A3C41B1104A2000F9B9A /* Maracana.gpx */,
+				16B3A3C21B11049A000F9B9A /* ManoelSatiro.gpx */,
+				16B3A3C01B11048F000F9B9A /* Jereissati.gpx */,
+				16B3A3BE1B110484000F9B9A /* Esperanca.gpx */,
+				16B3A3BC1B11047B000F9B9A /* CoutoFernandes.gpx */,
+				16B3A3BA1B110471000F9B9A /* CarlitoBenevides.gpx */,
+				16B3A3B81B110468000F9B9A /* Benfica.gpx */,
+				16B3A3B61B110460000F9B9A /* Aracape.gpx */,
+				16B3A3B41B110459000F9B9A /* AltoAlegre.gpx */,
+			);
+			name = "Estações GPX";
+			sourceTree = "<group>";
+		};
 		16BC4BC11AA23CE20087C855 = {
 			isa = PBXGroup;
 			children = (
+				16B3A3B31B11001A000F9B9A /* Estações GPX */,
 				169C671A1AF2E155004797BE /* Frameworks */,
 				16BEEA2C1ACE1EBC00EF53D3 /* RRTagController */,
 				16BC4BCC1AA23CE20087C855 /* MetroforApp */,
@@ -341,9 +394,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B3A3BB1B110471000F9B9A /* CarlitoBenevides.gpx in Resources */,
 				16BC4BDA1AA23CE20087C855 /* Main.storyboard in Resources */,
+				16B3A3BF1B110484000F9B9A /* Esperanca.gpx in Resources */,
 				16BC4BDF1AA23CE20087C855 /* LaunchScreen.xib in Resources */,
+				16B3A3B91B110468000F9B9A /* Benfica.gpx in Resources */,
+				16B3A3CB1B1104BE000F9B9A /* Porangabussu.gpx in Resources */,
+				16B3A3CF1B1104CE000F9B9A /* VilaPery.gpx in Resources */,
+				16B3A3C51B1104A2000F9B9A /* Maracana.gpx in Resources */,
+				16B3A3CD1B1104C6000F9B9A /* RachelDeQueiroz.gpx in Resources */,
+				16B3A3C31B11049A000F9B9A /* ManoelSatiro.gpx in Resources */,
 				16BC4BDC1AA23CE20087C855 /* Images.xcassets in Resources */,
+				16B3A3D11B1104D6000F9B9A /* VirgilioTavora.gpx in Resources */,
+				16B3A3B51B110459000F9B9A /* AltoAlegre.gpx in Resources */,
+				16B3A3B71B110460000F9B9A /* Aracape.gpx in Resources */,
+				16B3A3C11B11048F000F9B9A /* Jereissati.gpx in Resources */,
+				16B3A3C91B1104B4000F9B9A /* Parangaba.gpx in Resources */,
+				16B3A3C71B1104AB000F9B9A /* Mondubim.gpx in Resources */,
+				16B3A3BD1B11047B000F9B9A /* CoutoFernandes.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

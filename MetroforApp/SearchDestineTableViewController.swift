@@ -12,8 +12,11 @@ import MapKit
 class SearchDestineTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet var mySearchBar: UISearchBar!
+    
     var places = [Place]()
     var estacoes = [Estacao]()
+    
+    var blockView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +67,7 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
         
         let alert = UIAlertController(title: "Estação \(estacaoMaisProxima.nome)", message: String(format: "Estação mais próxima para %@: Estação %@ com %1.2fKm", self.places[indexPath.row].address, estacaoMaisProxima.nome, estacaoMaisProxima.distance/1000), preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Ver no mapa", style: UIAlertActionStyle.Default, handler: { (alert) -> Void in
             
             self.openMapForStation(estacaoMaisProxima, place: self.places[indexPath.row])
@@ -181,13 +184,41 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
     // MARK: - SEARCH BAR
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        self.mySearchBar.resignFirstResponder()
+        
+        self.blockView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        
+        self.blockView?.backgroundColor = UIColor.blackColor()
+        self.blockView?.alpha = 0.5
+        
+        let indicatorView = UIActivityIndicatorView(frame: CGRect(x: self.tableView.frame.width/2, y: self.tableView.center.y, width: 50, height: 50))
+        
+        indicatorView.startAnimating()
+
+        self.blockView?.addSubview(indicatorView)
+        
+        self.view.addSubview(self.blockView!)
+        
         let request = RequestGoogleGeocoding()
         request.initMySearchWithString(searchBar.text, completeBlock: { () -> () in
             
-            self.places = request.places
-            self.tableView.reloadData()
+            if request.places.count != 0 {
+                self.places = request.places
+                self.tableView.reloadData()
+            } else {
+                let noResults = UIAlertController(title: "Sem resultados", message: "Sua pesquisa não obteve resultados. Pesquise o ENDEREÇO do local.", preferredStyle: UIAlertControllerStyle.Alert)
+                let action = UIAlertAction(title: "Tente novamente", style: UIAlertActionStyle.Default, handler: nil)
+                noResults.addAction(action)
+                self.presentViewController(noResults, animated: true, completion: nil)
+            }
+
+            self.blockView?.removeFromSuperview()
+            indicatorView.stopAnimating()
             
         })
+        
+        
     }
 
 }

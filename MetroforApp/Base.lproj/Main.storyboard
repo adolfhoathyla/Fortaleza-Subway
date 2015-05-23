@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HoD-dn-RHJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HoD-dn-RHJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -167,16 +167,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Linha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKC-b1-1Qi">
-                                <rect key="frame" x="203" y="111" width="194" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="194" id="HGq-Yi-iY3"/>
-                                    <constraint firstAttribute="height" constant="21" id="tWb-bA-ocE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCB-Wg-V49">
                                 <rect key="frame" x="382" y="186" width="51" height="30"/>
                                 <state key="normal" title="Origem">
@@ -187,7 +177,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-b7-ccR">
-                                <rect key="frame" x="169" y="190" width="195" height="21"/>
+                                <rect key="frame" x="169" y="190" width="195" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="195" id="Wj2-tn-Pkd"/>
                                 </constraints>
@@ -205,11 +195,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmT-nb-rtk">
-                                <rect key="frame" x="169" y="250" width="193" height="21"/>
+                                <rect key="frame" x="169" y="250" width="193" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="193" id="KQj-p0-o9a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Linha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKC-b1-1Qi">
+                                <rect key="frame" x="203" y="111" width="194" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="194" id="HGq-Yi-iY3"/>
+                                    <constraint firstAttribute="height" constant="56" id="tWb-bA-ocE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TeluguSangamMN" family="Telugu Sangam MN" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -223,7 +223,7 @@
                             <constraint firstAttribute="centerY" secondItem="0Kf-B3-3eo" secondAttribute="centerY" constant="39" id="Y2K-BD-ine"/>
                             <constraint firstAttribute="centerY" secondItem="MCB-Wg-V49" secondAttribute="centerY" constant="99" id="eZo-9N-BsT"/>
                             <constraint firstAttribute="centerX" secondItem="MCB-Wg-V49" secondAttribute="centerX" constant="-107.5" id="fmf-nh-nqa"/>
-                            <constraint firstAttribute="centerY" secondItem="EKC-b1-1Qi" secondAttribute="centerY" constant="178.5" id="gas-WW-8gu"/>
+                            <constraint firstAttribute="centerY" secondItem="EKC-b1-1Qi" secondAttribute="centerY" constant="161" id="gas-WW-8gu"/>
                             <constraint firstAttribute="centerX" secondItem="0Kf-B3-3eo" secondAttribute="centerX" constant="-106.5" id="iGl-nz-ipC"/>
                             <constraint firstAttribute="centerX" secondItem="bKc-b7-ccR" secondAttribute="centerX" constant="33.5" id="ltQ-ft-l2h"/>
                         </constraints>
@@ -362,7 +362,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-V9-Fq9">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-V9-Fq9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                             <view alpha="0.69999999999999973" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-7J-vdi">
@@ -452,7 +452,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellLinha" id="OGi-DZ-eNU">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellLinha" id="OGi-DZ-eNU">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OGi-DZ-eNU" id="hke-aT-tK1">

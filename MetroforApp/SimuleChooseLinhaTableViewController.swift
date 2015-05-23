@@ -23,6 +23,8 @@ class SimuleChooseLinhaTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.linhas = ManagerData.getAllLinhas() as! [Linha]
+        
+        self.tableView.tableFooterView = UIView()
 
     }
 
@@ -50,6 +52,12 @@ class SimuleChooseLinhaTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = self.linhas[indexPath.row].nome
+        
+        if cell.textLabel?.text != "Sul" {
+            cell.backgroundColor = UIColor.grayColor()
+            cell.userInteractionEnabled = false
+            cell.textLabel?.textColor = UIColor.whiteColor()
+        }
 
         return cell
     }
