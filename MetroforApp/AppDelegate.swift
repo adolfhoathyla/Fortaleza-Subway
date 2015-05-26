@@ -198,7 +198,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func addAllEstacoes() {
         var manager = ManagerData()
-        manager.addEstacaoWithName("Casa do Athyla", latitude: -3.879383, longitude: -38.609168, linha: "Sul")
+        //manager.addEstacaoWithName("Casa do Athyla", latitude: -3.879383, longitude: -38.609168, linha: "Sul")
         manager.addEstacaoWithName("Carlito Benevides", latitude: -3.894090, longitude: -38.621003, linha: "Sul")
         manager.addEstacaoWithName("Jereissati", latitude: -3.887254, longitude: -38.627102, linha: "Sul")
         manager.addEstacaoWithName("Maracanaú", latitude: -3.878559, longitude: -38.625588, linha: "Sul")
