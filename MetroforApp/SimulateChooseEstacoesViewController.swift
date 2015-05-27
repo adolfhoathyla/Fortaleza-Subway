@@ -11,6 +11,10 @@ import UIKit
 
 class SimulateChooseEstacoesViewController: UIViewController {
     
+    @IBOutlet var constraintDestino: NSLayoutConstraint!
+    @IBOutlet var constraintOrigem: NSLayoutConstraint!
+    @IBOutlet var lbPara: UILabel!
+    @IBOutlet var lbDe: UILabel!
     @IBOutlet var labelLinha: UILabel!
     var linha = ""
     var estacoesAsString = [String]()
@@ -56,9 +60,9 @@ class SimulateChooseEstacoesViewController: UIViewController {
 
     @IBAction func actionOrigem(sender: AnyObject) {
         RRTagController.displayTagController(parentController: self, tagsString: self.estacoesAsString, blockFinish: { (selectedTags, unSelectedTags) -> () in
-            println(selectedTags[0].textContent)
+
+            self.animationButtonAndLabels(sender as! UIButton, op: "origem", estacao: selectedTags[0].textContent)
             
-            self.labelOrigem.text = selectedTags[0].textContent
         }) { () -> () in
             println("Cancelou: Origem")
         }
@@ -66,8 +70,8 @@ class SimulateChooseEstacoesViewController: UIViewController {
 
     @IBAction func actionDestino(sender: AnyObject) {
         RRTagController.displayTagController(parentController: self, tagsString: self.estacoesAsString, blockFinish: { (selectedTags, unSelectedTags) -> () in
-            
-            self.labelDestino.text = selectedTags[0].textContent
+
+            self.animationButtonAndLabels(sender as! UIButton, op: "destino", estacao: selectedTags[0].textContent)
             
         }) { () -> () in
             println("Cancelou: Destino")
@@ -83,6 +87,47 @@ class SimulateChooseEstacoesViewController: UIViewController {
             
         } else {
             self.performSegueWithIdentifier("showMap", sender: nil)
+        }
+    }
+    
+    func animationButtonAndLabels(button: UIButton, op: String, estacao: String) {
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            
+            if op == "origem" {
+                
+                self.constraintOrigem.constant = +70
+                
+            } else if op == "destino" {
+                
+                self.constraintDestino.constant = +70
+                
+            }
+            
+            
+            
+            self.view.layoutIfNeeded()
+            
+        }) { (success) -> Void in
+            
+            UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                
+                if op == "origem" {
+                    
+                    self.labelOrigem.text = estacao
+                    self.lbDe.alpha = 1
+                    self.labelOrigem.alpha = 1
+                    
+                } else if op == "destino" {
+                    
+                    self.labelDestino.text = estacao
+                    self.lbPara.alpha = 1
+                    self.labelDestino.alpha = 1
+                    
+                }
+                self.view.layoutIfNeeded()
+                
+            }, completion: nil)
+            
         }
     }
 }
