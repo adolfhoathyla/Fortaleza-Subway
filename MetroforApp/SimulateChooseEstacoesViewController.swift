@@ -10,7 +10,9 @@
 import UIKit
 
 class SimulateChooseEstacoesViewController: UIViewController {
-    
+
+    @IBOutlet var btDone: UIBarButtonItem!
+    @IBOutlet var btDestination: UIButton!
     @IBOutlet var constraintDestino: NSLayoutConstraint!
     @IBOutlet var constraintOrigem: NSLayoutConstraint!
     @IBOutlet var lbPara: UILabel!
@@ -27,6 +29,9 @@ class SimulateChooseEstacoesViewController: UIViewController {
         super.viewDidLoad()
         
         self.labelLinha.text = "Linha " + self.linha
+        
+        self.btDestination.enabled = false
+        self.btDone.enabled = false
         
         // Do any additional setup after loading the view.
         
@@ -116,12 +121,14 @@ class SimulateChooseEstacoesViewController: UIViewController {
                     self.labelOrigem.text = estacao
                     self.lbDe.alpha = 1
                     self.labelOrigem.alpha = 1
+                    self.btDestination.enabled = true
                     
                 } else if op == "destino" {
                     
                     self.labelDestino.text = estacao
                     self.lbPara.alpha = 1
                     self.labelDestino.alpha = 1
+                    self.btDone.enabled = true
                     
                 }
                 self.view.layoutIfNeeded()

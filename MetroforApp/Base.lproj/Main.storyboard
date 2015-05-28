@@ -261,6 +261,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btDestination" destination="0Kf-B3-3eo" id="MHt-wj-xhn"/>
+                        <outlet property="btDone" destination="vs0-L8-9Yu" id="d98-Mf-n8r"/>
                         <outlet property="constraintDestino" destination="iGl-nz-ipC" id="P5L-tT-mdo"/>
                         <outlet property="constraintOrigem" destination="fmf-nh-nqa" id="xse-JX-dW3"/>
                         <outlet property="labelDestino" destination="tmT-nb-rtk" id="wTk-Kx-6wm"/>
