@@ -138,7 +138,8 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
             println("Distancia para \(estacao.nome): \(meters / 1000)")
         }
         
-        var minDistance = 10000000000000000.0
+        //var minDistance = 10000000000000000.0
+        var minDistance = Double.infinity
         
         for estacao in estacoesWithDistance {
             minDistance = min(minDistance, estacao.distance)
@@ -185,40 +186,44 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        self.mySearchBar.resignFirstResponder()
-        
-        self.blockView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        
-        self.blockView?.backgroundColor = UIColor.blackColor()
-        self.blockView?.alpha = 0.5
-        
-        let indicatorView = UIActivityIndicatorView(frame: CGRect(x: self.tableView.frame.width/2, y: self.tableView.center.y, width: 50, height: 50))
-        
-        indicatorView.startAnimating()
-
-        self.blockView?.addSubview(indicatorView)
-        
-        self.view.addSubview(self.blockView!)
-        
-        let request = RequestGoogleGeocoding()
-        request.initMySearchWithString(searchBar.text, completeBlock: { () -> () in
+            if Reachability.isConnectedToNetwork() {
             
-            if request.places.count != 0 {
-                self.places = request.places
-                self.tableView.reloadData()
+                self.mySearchBar.resignFirstResponder()
+                
+                self.blockView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+                
+                self.blockView?.backgroundColor = UIColor.blackColor()
+                self.blockView?.alpha = 0.5
+                
+                let indicatorView = UIActivityIndicatorView(frame: CGRect(x: self.tableView.frame.width/2, y: self.tableView.center.y, width: 50, height: 50))
+                
+                indicatorView.startAnimating()
+
+                self.blockView?.addSubview(indicatorView)
+                
+                self.view.addSubview(self.blockView!)
+                
+                let request = RequestGoogleGeocoding()
+                request.initMySearchWithString(searchBar.text, completeBlock: { () -> () in
+                    
+                    if request.places.count != 0 {
+                        self.places = request.places
+                        self.tableView.reloadData()
+                    } else {
+                        let noResults = UIAlertController(title: "Sem resultados", message: "Sua pesquisa não obteve resultados. Pesquise o ENDEREÇO do local.", preferredStyle: UIAlertControllerStyle.Alert)
+                        let action = UIAlertAction(title: "Tente novamente", style: UIAlertActionStyle.Default, handler: nil)
+                        noResults.addAction(action)
+                        self.presentViewController(noResults, animated: true, completion: nil)
+                    }
+
+                    self.blockView?.removeFromSuperview()
+                    indicatorView.stopAnimating()
+                    
+                })
+                    
             } else {
-                let noResults = UIAlertController(title: "Sem resultados", message: "Sua pesquisa não obteve resultados. Pesquise o ENDEREÇO do local.", preferredStyle: UIAlertControllerStyle.Alert)
-                let action = UIAlertAction(title: "Tente novamente", style: UIAlertActionStyle.Default, handler: nil)
-                noResults.addAction(action)
-                self.presentViewController(noResults, animated: true, completion: nil)
+                UIAlertView(title: "Sem conexão", message: "Verifique sua conexão com a rede", delegate: nil, cancelButtonTitle: "Ok").show()
             }
-
-            self.blockView?.removeFromSuperview()
-            indicatorView.stopAnimating()
-            
-        })
-        
-        
     }
 
 }

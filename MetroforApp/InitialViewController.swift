@@ -190,7 +190,9 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
 //        println("Exit region ", region.identifier)
 //        self.myLocation.text = "Saiu da estação " + region.identifier
-//        self.estacaoMaisProxima.enabled = true
+        self.estacaoMaisProxima.enabled = true
+        
+        self.myLocation.text = "Não está em nenhuma estação"
         
         NSNotificationCenter.defaultCenter().postNotificationName("EXIT_REGION", object: self, userInfo: ["estacao": region.identifier])
         
@@ -245,7 +247,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
             println("Distance for \(estacao.nome): \(meters! / 1000)")
         }
         
-        var minDistance = 1000000000000000.0
+        //var minDistance = 1000000000000000.0
+        var minDistance = Double.infinity
         
         for estacao in estacoesProximas {
             minDistance = min(minDistance, estacao.distance)

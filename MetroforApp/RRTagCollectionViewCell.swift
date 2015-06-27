@@ -37,15 +37,15 @@ class RRTagCollectionViewCell: UICollectionViewCell {
         self.textContent.textColor = (self.isSelectedNew == true) ? colorTextSelectedTag : colorTextUnSelectedTag
     }
     
-    func initAddButtonContent() {
-        self.contentView.addSubview(textContent)
-        textContent.text = "+"
-        textContent.sizeToFit()
-        textContent.frame.size = CGSizeMake(40, 40)
-        textContent.backgroundColor = UIColor.clearColor()
-        self.textContent.layer.backgroundColor = UIColor.grayColor().CGColor
-        self.textContent.textColor = UIColor.whiteColor()
-    }
+//    func initAddButtonContent() {
+//        self.contentView.addSubview(textContent)
+//        textContent.text = "+"
+//        textContent.sizeToFit()
+//        textContent.frame.size = CGSizeMake(40, 40)
+//        textContent.backgroundColor = UIColor.clearColor()
+//        self.textContent.layer.backgroundColor = UIColor.grayColor().CGColor
+//        self.textContent.textColor = UIColor.whiteColor()
+//    }
     
     func animateSelection(selection: Bool) {
         isSelectedNew = selection

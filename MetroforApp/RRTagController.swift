@@ -220,7 +220,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
             cell?.initContent(currentTag)
         }
         else {
-            cell?.initAddButtonContent()
+            //cell?.initAddButtonContent()
         }
         return cell!
     }

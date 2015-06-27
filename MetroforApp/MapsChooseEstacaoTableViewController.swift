@@ -55,12 +55,16 @@ class MapsChooseEstacaoTableViewController: UITableViewController {
         
         
         cell.textLabel?.text = self.objects[indexPath.row]
+        
+        
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         self.performSegueWithIdentifier("showImageMap", sender: nil)
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     /*

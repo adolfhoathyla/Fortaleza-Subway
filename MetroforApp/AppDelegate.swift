@@ -40,14 +40,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //Se não tiver uma sessão aberta, então vamos abrir uma sessão no facebook (:
-        if !FBSession.activeSession().isOpen {
+//        if !FBSession.activeSession().isOpen {
         //if FBSession.activeSession().state == FBSessionState.CreatedTokenLoaded {
-            println("não está logado")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("OAuthFacebook") as! UIViewController
-            self.window?.makeKeyAndVisible()
-            self.window?.rootViewController?.presentViewController(loginViewController, animated: true, completion: nil)
-        }
+//            println("não está logado")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("OAuthFacebook") as! UIViewController
+//            self.window?.makeKeyAndVisible()
+//            self.window?.rootViewController?.presentViewController(loginViewController, animated: true, completion: nil)
+//        }
         
         //Notificações (:
         
