@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "botao2.png"
+      "filename" : "botoes2.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "botao2-1.png"
+      "filename" : "botoes2-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "botao2-2.png"
+      "filename" : "botoes2-2.png"
     }
   ],
   "info" : {

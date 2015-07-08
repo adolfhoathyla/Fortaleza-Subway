@@ -61,8 +61,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         self.myLocation.text = "Não está em nenhuma estação"
         self.estacaoMaisProxima.enabled = true
         
-        self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 5
-        self.profilePictureView.layer.masksToBounds = true
+        //self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 5
+        //self.profilePictureView.layer.masksToBounds = true
 
         // Do any additional setup after loading the view.
     }

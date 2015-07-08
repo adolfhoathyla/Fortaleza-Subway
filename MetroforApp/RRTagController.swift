@@ -15,7 +15,8 @@ struct Tag {
 }
 
 let colorUnselectedTag = UIColor.whiteColor()
-let colorSelectedTag = UIColor(red:0.22, green:0.7, blue:0.99, alpha:1)
+//let colorSelectedTag = UIColor(red:0.22, green:0.7, blue:0.99, alpha:1)
+let colorSelectedTag = UIColor.greenColor()
 
 let colorTextUnSelectedTag = UIColor(red:0.33, green:0.33, blue:0.35, alpha:1)
 let colorTextSelectedTag = UIColor.whiteColor()
@@ -66,7 +67,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
         collectionTag.contentInset = UIEdgeInsets(top: 84, left: 0, bottom: 20, right: 0)
         collectionTag.delegate = self
         collectionTag.dataSource = self
-        collectionTag.backgroundColor = UIColor.whiteColor()
+        collectionTag.backgroundColor = UIColor(red: 21/255, green: 138/255, blue: 15/255, alpha: 1)
         collectionTag.registerClass(RRTagCollectionViewCell.self, forCellWithReuseIdentifier: RRTagCollectionViewCellIdentifier)
         return collectionTag
     }()
@@ -117,7 +118,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
         
         navigationBar.pushNavigationItem(self.navigationBarItem, animated: true)
         navigationBar.tintColor = colorSelectedTag
-        navigationBar.backgroundColor = UIColor.blueColor()
+        navigationBar.backgroundColor = UIColor.greenColor()
         return navigationBar
     }()
     
@@ -247,7 +248,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.greenColor()
 
         leftButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelTagController")
         
