@@ -529,7 +529,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jA-Lx-v8q">
-                                            <rect key="frame" x="8" y="8" width="567" height="58.5"/>
+                                            <rect key="frame" x="8" y="8" width="567" height="73.5"/>
                                             <color key="backgroundColor" red="0.32549019610000002" green="0.63529411759999999" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -538,10 +538,10 @@
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="1jA-Lx-v8q" secondAttribute="trailing" constant="-16" id="6vT-5F-yDN"/>
-                                        <constraint firstItem="1jA-Lx-v8q" firstAttribute="bottom" secondItem="jUx-Cc-m50" secondAttribute="bottomMargin" constant="-15" id="HTf-UO-Emc"/>
-                                        <constraint firstItem="1jA-Lx-v8q" firstAttribute="top" secondItem="jUx-Cc-m50" secondAttribute="topMargin" id="ggl-TL-taC"/>
-                                        <constraint firstItem="1jA-Lx-v8q" firstAttribute="leading" secondItem="jUx-Cc-m50" secondAttribute="leadingMargin" id="hvO-pM-mTZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1jA-Lx-v8q" secondAttribute="bottom" id="6Vb-4f-j5j"/>
+                                        <constraint firstItem="1jA-Lx-v8q" firstAttribute="leading" secondItem="jUx-Cc-m50" secondAttribute="leadingMargin" id="NJ0-v0-Igt"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1jA-Lx-v8q" secondAttribute="trailing" constant="-16" id="sP7-hR-2Up"/>
+                                        <constraint firstItem="1jA-Lx-v8q" firstAttribute="top" secondItem="jUx-Cc-m50" secondAttribute="topMargin" id="zG9-Rl-Yh2"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.63529411759999999" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>

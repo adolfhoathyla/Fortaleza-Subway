@@ -15,7 +15,9 @@ class RequestGoogleGeocoding {
     func initMySearchWithString(search: String, completeBlock: () -> ()) {
         
         if let urlUTF8 = search.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding) {
-            var url = "http://maps.googleapis.com/maps/api/geocode/json?address=\(urlUTF8)&sensor=true&region=br"
+            
+//            var url = "http://maps.googleapis.com/maps/api/geocode/json?address=\(urlUTF8)&sensor=true&components=country:BR"
+            var url = "http://maps.googleapis.com/maps/api/geocode/json?address=\(urlUTF8)&sensor=true&components=administrative_area:CE"
             
             self.getDataFrom(url, completeBlock: { () -> () in
                 completeBlock()

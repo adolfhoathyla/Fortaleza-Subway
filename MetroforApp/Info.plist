@@ -10,6 +10,8 @@
 	<string>MetroforApp</string>
 	<key>FacebookAppID</key>
 	<string>1572564723012802</string>
+	<key>CFBundleDisplayName</key>
+	<string>Fortaleza Subway</string>
 	<key>CFBundleIdentifier</key>
 	<string>BEPiD.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>

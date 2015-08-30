@@ -81,7 +81,7 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 65.0
+        return 75.0
     }
 
     /*
@@ -201,13 +201,16 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
                 self.blockView?.backgroundColor = UIColor.blackColor()
                 self.blockView?.alpha = 0.5
                 
-                let indicatorView = UIActivityIndicatorView(frame: CGRect(x: self.tableView.frame.width/2, y: self.tableView.center.y, width: 50, height: 50))
+                let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+                
+                indicatorView.center = self.view.center
                 
                 indicatorView.startAnimating()
 
                 self.blockView?.addSubview(indicatorView)
                 
                 self.view.addSubview(self.blockView!)
+                
                 
                 let request = RequestGoogleGeocoding()
                 request.initMySearchWithString(searchBar.text, completeBlock: { () -> () in
