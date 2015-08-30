@@ -67,7 +67,7 @@ class RRTagController: UIViewController, UICollectionViewDelegate, UICollectionV
         collectionTag.contentInset = UIEdgeInsets(top: 84, left: 0, bottom: 20, right: 0)
         collectionTag.delegate = self
         collectionTag.dataSource = self
-        collectionTag.backgroundColor = UIColor(red: 21/255, green: 138/255, blue: 15/255, alpha: 1)
+        collectionTag.backgroundColor = UIColor(red: 83/255, green: 162/255, blue: 123/255, alpha: 1)
         collectionTag.registerClass(RRTagCollectionViewCell.self, forCellWithReuseIdentifier: RRTagCollectionViewCellIdentifier)
         return collectionTag
     }()

@@ -29,6 +29,8 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        self.tableView.tableFooterView = UIView()
+        
         self.estacoes = ManagerData.getAllEstacoesOfLinha("Sul") as! [(Estacao)]
     }
 
@@ -52,11 +54,12 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellPlace", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellPlace", forIndexPath: indexPath) as! SearchDestineTableViewCell
 
         // Configure the cell...
         
-        cell.textLabel?.text = self.places[indexPath.row].address
+        cell.textViewAddress?.text = self.places[indexPath.row].address
+        //cell.textLabel?.textColor = UIColor.whiteColor()
 
         return cell
     }
@@ -77,6 +80,9 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 65.0
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -211,7 +217,7 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
                         self.tableView.reloadData()
                     } else {
                         let noResults = UIAlertController(title: "Sem resultados", message: "Sua pesquisa não obteve resultados. Pesquise o ENDEREÇO do local.", preferredStyle: UIAlertControllerStyle.Alert)
-                        let action = UIAlertAction(title: "Tente novamente", style: UIAlertActionStyle.Default, handler: nil)
+                        let action = UIAlertAction(title: "Tente novamente", style: UIAlertActionStyle.Cancel, handler: nil)
                         noResults.addAction(action)
                         self.presentViewController(noResults, animated: true, completion: nil)
                     }

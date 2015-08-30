@@ -19,7 +19,7 @@ class RequestGoogleGeocoding {
             
             self.getDataFrom(url, completeBlock: { () -> () in
                 completeBlock()
-            })
+            })  
         }
         
     }
@@ -53,6 +53,9 @@ class RequestGoogleGeocoding {
             let longitudes = locations.valueForKey("location")?.valueForKey("lng") as! NSArray
             
             for var i = 0; i < addresses.count; i++ {
+                
+                let lat = latitudes[i] as! CLLocationDegrees
+                
                 var place = Place(latitude: latitudes[i] as! Double, longitude: longitudes[i] as! Double, address: addresses[i] as! String)
                 
                 self.places.append(place)

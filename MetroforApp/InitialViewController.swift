@@ -24,8 +24,12 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     var estacaoInicial = "Nenhuma"
     
+    var dateFirstStation = NSDate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        println("Horário: \(dateFirstStation)")
         
         self.initMyLocationManager()
         
@@ -171,13 +175,24 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         //criar uma notificação
         //fazer a verificação se é ou não a primeira estação que o usuário está
         
-        var notification:UILocalNotification = UILocalNotification()
-        notification.category = "MY_CATEGORY"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        notification.applicationIconBadgeNumber = 1
-        notification.alertBody = "Você está na estação \(region.identifier)?"
+        //30 minutos: 1800
         
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        println(dateFirstStation.timeIntervalSinceNow)
+        
+        if dateFirstStation.timeIntervalSinceNow < -1000 {
+            
+            dateFirstStation = NSDate()
+            
+            var notification:UILocalNotification = UILocalNotification()
+            notification.category = "MY_CATEGORY"
+            notification.soundName = UILocalNotificationDefaultSoundName
+            notification.applicationIconBadgeNumber = 1
+            notification.alertBody = "Você está na estação \(region.identifier)?"
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        }
+        
+        //até aqui
     
         println("Enter region ", region.identifier)
         self.myLocation.text = "Está na estação " + region.identifier

@@ -55,6 +55,7 @@ class MapsChooseEstacaoTableViewController: UITableViewController {
         
         
         cell.textLabel?.text = self.objects[indexPath.row]
+        cell.textLabel?.textColor = UIColor.whiteColor()
         
         
 
