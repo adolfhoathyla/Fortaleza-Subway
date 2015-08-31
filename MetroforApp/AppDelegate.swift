@@ -213,10 +213,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         manager.addEstacaoWithName("Parangaba", latitude: -3.775648, longitude: -38.563614, linha: "Sul")
         manager.addEstacaoWithName("Couto Fernandes", latitude: -3.757276, longitude: -38.557599, linha: "Sul")
         manager.addEstacaoWithName("Porangabussu", latitude: -3.751283, longitude: -38.551447, linha: "Sul")
-        manager.addEstacaoWithName("Benfica", latitude: -3.739647, longitude: -38.538245, linha: "Sul")
-        //manager.addEstacaoWithName("São Benedito", latitude: -3.739095, longitude: -38.538334, linha: "Sul")
-        //manager.addEstacaoWithName("José de Alencar", latitude: -3.739131, longitude: -38.538322, linha: "Sul")
-        //manager.addEstacaoWithName("Chico da Silva", latitude: -3.739134, longitude: -38.538278, linha: "Sul")
+        manager.addEstacaoWithName("Benfica", latitude: -3.739154, longitude: -38.540032, linha: "Sul")
+        manager.addEstacaoWithName("São Benedito", latitude: -3.731717, longitude: -38.535000, linha: "Sul")
+        manager.addEstacaoWithName("José de Alencar", latitude: -3.726197, longitude: -38.532553, linha: "Sul")
+        manager.addEstacaoWithName("Chico da Silva", latitude: -3.721343, longitude: -38.530937, linha: "Sul")
     }
     
     func AddAllHorarios() {
