@@ -113,7 +113,7 @@ class MapsChooseEstacaoTableViewController: UITableViewController {
         
         if segue.identifier == "showImageMap" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let showImageViewController = segue.destinationViewController as! ShowMapViewController
+                let showImageViewController = segue.destinationViewController as! ImageMapWithScrollViewController
                 showImageViewController.nameImage = self.objects[indexPath.row]
                 segue.destinationViewController.navigationItem.title = self.objects[indexPath.row]
             }

@@ -149,7 +149,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Mapas" id="4oI-An-LEA"/>
                     <connections>
-                        <segue destination="ono-Il-BPX" kind="show" identifier="showImageMap" id="cc4-5s-aOz"/>
+                        <segue destination="mxj-JD-Mel" kind="show" identifier="showImageMap" id="fiM-IK-onw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asi-Qv-bpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,39 +276,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1y-1b-bX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2240" y="1018"/>
-        </scene>
-        <!--Show Map View Controller-->
-        <scene sceneID="L8Y-aD-bZ1">
-            <objects>
-                <viewController id="ono-Il-BPX" customClass="ShowMapViewController" customModule="MetroforApp" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kIc-UC-bGi"/>
-                        <viewControllerLayoutGuide type="bottom" id="E7x-GK-Vx5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0Jn-Wk-ubZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JKb-lE-o8Q">
-                                <rect key="frame" x="0.0" y="68" width="600" height="487"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="JKb-lE-o8Q" secondAttribute="trailing" constant="-16" id="FvR-bX-3HQ"/>
-                            <constraint firstItem="JKb-lE-o8Q" firstAttribute="leading" secondItem="0Jn-Wk-ubZ" secondAttribute="leadingMargin" constant="-16" id="MJ5-3m-QiV"/>
-                            <constraint firstItem="E7x-GK-Vx5" firstAttribute="top" secondItem="JKb-lE-o8Q" secondAttribute="bottom" constant="-4" id="RkL-lh-cJC"/>
-                            <constraint firstItem="JKb-lE-o8Q" firstAttribute="top" secondItem="kIc-UC-bGi" secondAttribute="bottom" constant="4" id="thF-jG-UKk"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="jxg-1n-WjU"/>
-                    <connections>
-                        <outlet property="imageMap" destination="JKb-lE-o8Q" id="wmD-W2-hlj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QxK-WJ-cc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1411" y="2017"/>
         </scene>
         <!--Mapas-->
         <scene sceneID="kuj-pT-KgA">
@@ -841,6 +808,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDW-va-2YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-290.625" y="3016.25"/>
+        </scene>
+        <!--Image Map With Scroll View Controller-->
+        <scene sceneID="yZ9-Aa-Umi">
+            <objects>
+                <viewController id="mxj-JD-Mel" customClass="ImageMapWithScrollViewController" customModule="MetroforApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o85-Sf-bHV"/>
+                        <viewControllerLayoutGuide type="bottom" id="QxT-48-aiF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N83-uv-5K5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-EA-7p0">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="g8X-Pz-bYf">
+                                        <rect key="frame" x="250" y="220" width="100" height="100"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="g8X-Pz-bYf" firstAttribute="leading" secondItem="bhT-EA-7p0" secondAttribute="leading" constant="250" id="2YO-Fz-y9z"/>
+                                    <constraint firstItem="g8X-Pz-bYf" firstAttribute="trailing" secondItem="bhT-EA-7p0" secondAttribute="trailing" constant="-250" id="BJB-G3-2U1" userLabel="Horizontal Space - (-1) - Scroll View - Image View"/>
+                                    <constraint firstItem="g8X-Pz-bYf" firstAttribute="top" secondItem="bhT-EA-7p0" secondAttribute="top" constant="220" id="Trh-gF-xl2"/>
+                                    <constraint firstItem="g8X-Pz-bYf" firstAttribute="bottom" secondItem="bhT-EA-7p0" secondAttribute="bottom" constant="-260" id="wPL-YH-Ti2"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bhT-EA-7p0" firstAttribute="top" secondItem="o85-Sf-bHV" secondAttribute="top" id="IYm-IZ-YMM"/>
+                            <constraint firstAttribute="trailing" secondItem="bhT-EA-7p0" secondAttribute="trailing" id="QnO-tk-o7G"/>
+                            <constraint firstItem="QxT-48-aiF" firstAttribute="bottom" secondItem="bhT-EA-7p0" secondAttribute="bottom" id="fcp-eK-026"/>
+                            <constraint firstItem="bhT-EA-7p0" firstAttribute="leading" secondItem="N83-uv-5K5" secondAttribute="leading" id="iof-bk-hIi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageConstraintBottom" destination="wPL-YH-Ti2" id="bVh-a0-NrD"/>
+                        <outlet property="imageConstraintLeft" destination="2YO-Fz-y9z" id="zrW-ka-oih"/>
+                        <outlet property="imageConstraintRight" destination="BJB-G3-2U1" id="3j0-fT-s7E"/>
+                        <outlet property="imageConstraintTop" destination="Trh-gF-xl2" id="VNX-tj-Uuq"/>
+                        <outlet property="imageView" destination="g8X-Pz-bYf" id="Q3R-G1-g4f"/>
+                        <outlet property="scrollView" destination="bhT-EA-7p0" id="O6C-hX-iSN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGy-EL-wIx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1411" y="2770"/>
         </scene>
     </scenes>
     <resources>

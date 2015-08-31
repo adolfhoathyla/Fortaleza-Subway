@@ -53,6 +53,7 @@
 		16BEEA311ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEEA2E1ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift */; };
 		16BEEA321ACE1ED800EF53D3 /* RRTagController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEEA2F1ACE1ED800EF53D3 /* RRTagController.swift */; };
 		16D485A11B3F035100254187 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D485A01B3F035100254187 /* Reachability.swift */; };
+		16D4BC331B93EE76000B6FA9 /* ImageMapWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4BC321B93EE76000B6FA9 /* ImageMapWithScrollViewController.swift */; };
 		16DB94B21AAB521F00A56D38 /* OAuthFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */; };
 		16DB94B61AAB55E600A56D38 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B31AAB55E600A56D38 /* Bolts.framework */; };
 		16DB94B71AAB55E600A56D38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */; };
@@ -127,6 +128,7 @@
 		16BEEA2E1ACE1ED800EF53D3 /* RRTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		16BEEA2F1ACE1ED800EF53D3 /* RRTagController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRTagController.swift; sourceTree = "<group>"; };
 		16D485A01B3F035100254187 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		16D4BC321B93EE76000B6FA9 /* ImageMapWithScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMapWithScrollViewController.swift; sourceTree = "<group>"; };
 		16DB94B11AAB521F00A56D38 /* OAuthFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthFacebookViewController.swift; sourceTree = "<group>"; };
 		16DB94B31AAB55E600A56D38 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		16DB94B41AAB55E600A56D38 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				16BC2DBA1AA39646004EBBD4 /* InitialViewController.swift */,
 				16BC4BFA1AA264510087C855 /* ChooseEstacaoTableViewController.swift */,
 				1688F47E1B9381D400D4D95D /* SearchDestineTableViewCell.swift */,
+				16D4BC321B93EE76000B6FA9 /* ImageMapWithScrollViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				163E93C21AABF9710035913F /* Horario.m in Sources */,
 				16BC4BD51AA23CE20087C855 /* MasterViewController.swift in Sources */,
 				16BC4C011AA266B10087C855 /* Linha.m in Sources */,
+				16D4BC331B93EE76000B6FA9 /* ImageMapWithScrollViewController.swift in Sources */,
 				16BE11CF1AACFE5E0040083F /* MapsChooseEstacaoTableViewController.swift in Sources */,
 				16BC2DB91AA363F4004EBBD4 /* ChooseSentidoTableViewController.swift in Sources */,
 			);
