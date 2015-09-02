@@ -26,6 +26,8 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     var dateFirstStation = NSDate()
     
+    var firstAccess = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -175,11 +177,27 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
         //criar uma notificação
         //fazer a verificação se é ou não a primeira estação que o usuário está
         
+        if firstAccess {
+            
+            firstAccess = false
+            
+            dateFirstStation = NSDate()
+            
+            var notification:UILocalNotification = UILocalNotification()
+            notification.category = "MY_CATEGORY"
+            notification.soundName = UILocalNotificationDefaultSoundName
+            notification.applicationIconBadgeNumber = 1
+            notification.alertBody = "Você está na estação \(region.identifier)?"
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            
+        }
+        
         //30 minutos: 1800
         
         println(dateFirstStation.timeIntervalSinceNow)
         
-        if dateFirstStation.timeIntervalSinceNow < -1000 {
+        if dateFirstStation.timeIntervalSinceNow < -1800 {
             
             dateFirstStation = NSDate()
             
