@@ -86,7 +86,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     private func addRegionsMonitoring() {
         
-        //estou supondo que só existe estação Sul
+        //estou supondo que só existe linha Sul
         self.estacoes = ManagerData.getAllEstacoesOfLinha("Sul") as! [Estacao]
         for estacao in self.estacoes {
             self.makeRegionMonitoring(latitude: estacao.latitude as Double, longitude: estacao.longitude as Double, identifier: estacao.nome)

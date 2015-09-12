@@ -10,6 +10,7 @@
 		161A6D9B1AABE6FB0081F40A /* HorariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A6D9A1AABE6FB0081F40A /* HorariosTableViewController.swift */; };
 		163E93C21AABF9710035913F /* Horario.m in Sources */ = {isa = PBXBuildFile; fileRef = 163E93C11AABF9710035913F /* Horario.m */; };
 		163E93C41AAC058F0035913F /* ConfigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E93C31AAC058F0035913F /* ConfigTableViewController.swift */; };
+		164C05CD1BA3D1E000A52D77 /* ChicoDaSilva.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 164C05CC1BA3D1E000A52D77 /* ChicoDaSilva.gpx */; };
 		1688F47F1B9381D400D4D95D /* SearchDestineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688F47E1B9381D400D4D95D /* SearchDestineTableViewCell.swift */; };
 		16B3A3B51B110459000F9B9A /* AltoAlegre.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3B41B110459000F9B9A /* AltoAlegre.gpx */; };
 		16B3A3B71B110460000F9B9A /* Aracape.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 16B3A3B61B110460000F9B9A /* Aracape.gpx */; };
@@ -77,6 +78,7 @@
 		163E93C01AABF9710035913F /* Horario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Horario.h; sourceTree = "<group>"; };
 		163E93C11AABF9710035913F /* Horario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Horario.m; sourceTree = "<group>"; };
 		163E93C31AAC058F0035913F /* ConfigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewController.swift; sourceTree = "<group>"; };
+		164C05CC1BA3D1E000A52D77 /* ChicoDaSilva.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ChicoDaSilva.gpx; sourceTree = "<group>"; };
 		1688F47E1B9381D400D4D95D /* SearchDestineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDestineTableViewCell.swift; sourceTree = "<group>"; };
 		16B3A3B41B110459000F9B9A /* AltoAlegre.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AltoAlegre.gpx; sourceTree = "<group>"; };
 		16B3A3B61B110460000F9B9A /* Aracape.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Aracape.gpx; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				16B3A3CA1B1104BE000F9B9A /* Porangabussu.gpx */,
 				16B3A3C81B1104B4000F9B9A /* Parangaba.gpx */,
 				16B3A3C61B1104AB000F9B9A /* Mondubim.gpx */,
+				164C05CC1BA3D1E000A52D77 /* ChicoDaSilva.gpx */,
 				16B3A3C41B1104A2000F9B9A /* Maracana.gpx */,
 				16B3A3C21B11049A000F9B9A /* ManoelSatiro.gpx */,
 				16B3A3C01B11048F000F9B9A /* Jereissati.gpx */,
@@ -419,6 +422,7 @@
 				16B3A3B71B110460000F9B9A /* Aracape.gpx in Resources */,
 				16B3A3C11B11048F000F9B9A /* Jereissati.gpx in Resources */,
 				16B3A3C91B1104B4000F9B9A /* Parangaba.gpx in Resources */,
+				164C05CD1BA3D1E000A52D77 /* ChicoDaSilva.gpx in Resources */,
 				16B3A3C71B1104AB000F9B9A /* Mondubim.gpx in Resources */,
 				16B3A3BD1B11047B000F9B9A /* CoutoFernandes.gpx in Resources */,
 			);

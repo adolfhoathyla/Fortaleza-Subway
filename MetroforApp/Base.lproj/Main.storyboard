@@ -590,13 +590,13 @@
                                     <action selector="actionEstacaoMaisProxima:" destination="Eyl-fw-Ogu" eventType="touchUpInside" id="kjc-hD-7y8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y67-hS-s4k">
-                                <rect key="frame" x="165" y="142" width="271" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sometihng" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y67-hS-s4k">
+                                <rect key="frame" x="165" y="118" width="271" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="NnO-sb-lyj"/>
+                                    <constraint firstAttribute="height" constant="52" id="NnO-sb-lyj"/>
                                     <constraint firstAttribute="width" constant="271" id="Nxc-60-huK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TeluguSangamMN" family="Telugu Sangam MN" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -621,7 +621,7 @@
                             <constraint firstAttribute="centerY" secondItem="O72-K9-wne" secondAttribute="centerY" constant="-120" id="BeP-my-kSf"/>
                             <constraint firstAttribute="centerY" secondItem="e5A-Nf-nEU" secondAttribute="centerY" constant="50" id="TOp-nl-KKa"/>
                             <constraint firstAttribute="centerX" secondItem="O72-K9-wne" secondAttribute="centerX" constant="15" id="a3a-0h-V19"/>
-                            <constraint firstAttribute="centerY" secondItem="y67-hS-s4k" secondAttribute="centerY" constant="147.5" id="bLQ-UI-vg5"/>
+                            <constraint firstAttribute="centerY" secondItem="y67-hS-s4k" secondAttribute="centerY" constant="156" id="bLQ-UI-vg5"/>
                             <constraint firstAttribute="centerY" secondItem="0Ji-6h-7kr" secondAttribute="centerY" id="eY7-aL-b3X"/>
                             <constraint firstAttribute="centerX" secondItem="y67-hS-s4k" secondAttribute="centerX" constant="-0.5" id="nuz-cI-Jly"/>
                         </constraints>
