@@ -14,6 +14,10 @@ class MapsChooseEstacaoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.backgroundView = UIView()
+        self.tableView.backgroundView?.backgroundColor = UIColor.clearColor()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -56,7 +60,7 @@ class MapsChooseEstacaoTableViewController: UITableViewController {
         
         cell.textLabel?.text = self.objects[indexPath.row]
         cell.textLabel?.textColor = UIColor.whiteColor()
-        
+        cell.backgroundColor = self.view.backgroundColor
         
 
         return cell

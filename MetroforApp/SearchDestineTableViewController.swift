@@ -59,6 +59,7 @@ class SearchDestineTableViewController: UITableViewController, UISearchBarDelega
         // Configure the cell...
         
         cell.textViewAddress?.text = self.places[indexPath.row].address
+        cell.backgroundColor = self.view.backgroundColor
         //cell.textLabel?.textColor = UIColor.whiteColor()
 
         return cell

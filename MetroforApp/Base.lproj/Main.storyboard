@@ -590,7 +590,7 @@
                                     <action selector="actionEstacaoMaisProxima:" destination="Eyl-fw-Ogu" eventType="touchUpInside" id="kjc-hD-7y8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sometihng" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y67-hS-s4k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y67-hS-s4k">
                                 <rect key="frame" x="165" y="118" width="271" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="NnO-sb-lyj"/>

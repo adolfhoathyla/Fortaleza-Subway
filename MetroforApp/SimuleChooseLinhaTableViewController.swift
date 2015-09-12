@@ -53,6 +53,7 @@ class SimuleChooseLinhaTableViewController: UITableViewController {
         // Configure the cell...
         cell.textLabel?.text = self.linhas[indexPath.row].nome
         cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.backgroundColor = self.view.backgroundColor
         
         if cell.textLabel?.text != "Sul" {
             cell.backgroundColor = UIColor.grayColor()
